@@ -1,0 +1,756 @@
+{
+    "type": "bundle",
+    "id": "bundle--5b4d988c-1f3a-46e6-b46d-9c7fc56362ab",
+    "objects": [
+        {
+            "type": "campaign",
+            "spec_version": "2.1",
+            "id": "campaign--a0f6fefc-c769-4ecb-9a2f-b3eefe3a4aad",
+            "created": "2024-05-13T10:36:45.448266Z",
+            "modified": "2024-05-13T10:36:45.448266Z",
+            "name": "Operation DeputyDog",
+            "description": "FireEye has discovered a campaign leveraging the recently announced zero-day CVE-2013-3893. This campaign, which we have labeled \u2018Operation DeputyDog\u2019, began as early as August 19, 2013 and appears to have targeted organizations in Japan.",
+            "first_seen": "2013-08-19T00:00:00Z"
+        },
+        {
+            "type": "threat-actor",
+            "spec_version": "2.1",
+            "id": "threat-actor--a9ec4287-893e-4a56-a413-f03f176955b2",
+            "created": "2024-05-13T10:36:45.448266Z",
+            "modified": "2024-05-13T10:36:45.448266Z",
+            "name": "Unknown Threat Actor",
+            "description": "The group responsible for this new operation is the same threat actor that compromised Bit9 in February 2013."
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--a1698e70-e1d9-4720-8778-caadee07d59e",
+            "created": "2024-05-13T10:36:45.448266Z",
+            "modified": "2024-05-13T10:36:45.448266Z",
+            "name": "Unknown Identity",
+            "description": "The group responsible for this new operation is the same threat actor that compromised Bit9 in February 2013."
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--1d593bc0-63fc-4921-9987-d0d73d9024d5",
+            "created": "2024-05-13T10:36:45.448266Z",
+            "modified": "2024-05-13T10:36:45.448266Z",
+            "relationship_type": "attributed-to",
+            "source_ref": "threat-actor--a9ec4287-893e-4a56-a413-f03f176955b2",
+            "target_ref": "identity--a1698e70-e1d9-4720-8778-caadee07d59e"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--b859e3a1-84e4-4ab1-9c91-1fe498c00ef4",
+            "created": "2024-05-13T10:36:45.449266Z",
+            "modified": "2024-05-13T10:36:45.449266Z",
+            "relationship_type": "attributed-to",
+            "source_ref": "campaign--a0f6fefc-c769-4ecb-9a2f-b3eefe3a4aad",
+            "target_ref": "threat-actor--a9ec4287-893e-4a56-a413-f03f176955b2"
+        },
+        {
+            "type": "vulnerability",
+            "spec_version": "2.1",
+            "id": "vulnerability--2d402c34-1643-40a7-bc66-f7c4d7c24b69",
+            "created": "2024-05-13T10:36:45.449266Z",
+            "modified": "2024-05-13T10:36:45.449266Z",
+            "name": "CVE-2013-3893",
+            "description": "On September 17, 2013 Microsoft published details regarding a new zero-day exploit in Internet Explorer that was being used in targeted attacks."
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--3481bf41-5f12-4bbf-a26e-af561d6f1f46",
+            "created": "2024-05-13T10:36:45.449266Z",
+            "modified": "2024-05-13T10:36:45.449266Z",
+            "relationship_type": "targets",
+            "source_ref": "campaign--a0f6fefc-c769-4ecb-9a2f-b3eefe3a4aad",
+            "target_ref": "vulnerability--2d402c34-1643-40a7-bc66-f7c4d7c24b69"
+        },
+        {
+            "type": "infrastructure",
+            "spec_version": "2.1",
+            "id": "infrastructure--bea15dd0-7ce8-4f66-8462-84458c03c5d5",
+            "created": "2024-05-13T10:36:45.449266Z",
+            "modified": "2024-05-13T10:36:45.449266Z",
+            "name": "Internet Explorer",
+            "description": "On September 17, 2013 Microsoft published details regarding a new zero-day exploit in Internet Explorer that was being used in targeted attacks."
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--d3d55591-1cb2-4ef4-835f-56ba44b2c7a7",
+            "created": "2024-05-13T10:36:45.449266Z",
+            "modified": "2024-05-13T10:36:45.449266Z",
+            "relationship_type": "targets",
+            "source_ref": "campaign--a0f6fefc-c769-4ecb-9a2f-b3eefe3a4aad",
+            "target_ref": "infrastructure--bea15dd0-7ce8-4f66-8462-84458c03c5d5"
+        },
+        {
+            "type": "infrastructure",
+            "spec_version": "2.1",
+            "id": "infrastructure--07c14af1-d7d0-4b71-8770-6aba411ae6f1",
+            "created": "2024-05-13T10:36:45.449266Z",
+            "modified": "2024-05-13T10:36:45.449266Z",
+            "name": "Unknown Japanese Organization",
+            "description": "FireEye can confirm reports that these attacks were directed against entities in Japan."
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--3bc7f5ba-2254-4ea9-b2dd-cfc303e85a6a",
+            "created": "2024-05-13T10:36:45.449266Z",
+            "modified": "2024-05-13T10:36:45.449266Z",
+            "relationship_type": "targets",
+            "source_ref": "campaign--a0f6fefc-c769-4ecb-9a2f-b3eefe3a4aad",
+            "target_ref": "infrastructure--07c14af1-d7d0-4b71-8770-6aba411ae6f1"
+        },
+        {
+            "type": "location",
+            "spec_version": "2.1",
+            "id": "location--71f151dc-d281-4d3e-aab8-72356bbb0ecb",
+            "created": "2024-05-13T10:36:45.449266Z",
+            "modified": "2024-05-13T10:36:45.449266Z",
+            "name": "Japan",
+            "description": "FireEye can confirm reports that these attacks were directed against entities in Japan.",
+            "country": "Japan"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--97510b4d-e258-4c0f-8d79-51dc425c5509",
+            "created": "2024-05-13T10:36:45.449266Z",
+            "modified": "2024-05-13T10:36:45.449266Z",
+            "relationship_type": "located-at",
+            "source_ref": "infrastructure--07c14af1-d7d0-4b71-8770-6aba411ae6f1",
+            "target_ref": "location--71f151dc-d281-4d3e-aab8-72356bbb0ecb"
+        },
+        {
+            "type": "campaign",
+            "spec_version": "2.1",
+            "id": "campaign--a59378f6-8bdf-4729-90b9-5318aadc0882",
+            "created": "2024-05-13T10:36:45.449266Z",
+            "modified": "2024-05-13T10:36:45.449266Z",
+            "name": "Campaign on Bit9",
+            "description": "According to Bit9, the attackers that penetrated their network dropped two variants of the HiKit rootkit."
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--3b139db3-d75b-4b8a-944c-e2d57d109c2e",
+            "created": "2024-05-13T10:36:45.449266Z",
+            "modified": "2024-05-13T10:36:45.449266Z",
+            "relationship_type": "attributed-to",
+            "source_ref": "campaign--a59378f6-8bdf-4729-90b9-5318aadc0882",
+            "target_ref": "threat-actor--a9ec4287-893e-4a56-a413-f03f176955b2"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--ac6c1eaa-0ab9-4f69-a1c9-6c2829cfc4e8",
+            "created": "2024-05-13T10:36:45.449266Z",
+            "modified": "2024-05-13T10:36:45.449266Z",
+            "name": "img20130823.jpg",
+            "description": "The payload was hosted on a server in Hong Kong (210.176.3.130) and was named 'img20130823.jpg'",
+            "is_family": false,
+            "aliases": [
+                "8aba4b5184072f2a50cbc5ecfe326701"
+            ]
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--fb08895e-834d-4ee4-9afa-7135998d0d3c",
+            "created": "2024-05-13T10:36:45.449266Z",
+            "modified": "2024-05-13T10:36:45.449266Z",
+            "relationship_type": "uses",
+            "source_ref": "campaign--a0f6fefc-c769-4ecb-9a2f-b3eefe3a4aad",
+            "target_ref": "malware--ac6c1eaa-0ab9-4f69-a1c9-6c2829cfc4e8"
+        },
+        {
+            "type": "infrastructure",
+            "spec_version": "2.1",
+            "id": "infrastructure--5acfcb1f-6a3e-47b1-80c2-0bc160cb74bc",
+            "created": "2024-05-13T10:36:45.449266Z",
+            "modified": "2024-05-13T10:36:45.449266Z",
+            "name": "Hong Kong Server",
+            "description": "The payload was hosted on a server in Hong Kong (210.176.3.130) and was named 'img20130823.jpg'",
+            "aliases": [
+                "210.176.3.130"
+            ]
+        },
+        {
+            "type": "ipv4-addr",
+            "spec_version": "2.1",
+            "id": "ipv4-addr--14cdeced-d053-57d1-9f80-0b057fb2c439",
+            "value": "210.176.3.130"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--fa4b4651-5da3-4e5e-8b60-4ac23ae3300a",
+            "created": "2024-05-13T10:36:45.450266Z",
+            "modified": "2024-05-13T10:36:45.450266Z",
+            "relationship_type": "consists-of",
+            "source_ref": "infrastructure--5acfcb1f-6a3e-47b1-80c2-0bc160cb74bc",
+            "target_ref": "ipv4-addr--14cdeced-d053-57d1-9f80-0b057fb2c439"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--87e39f49-5fee-4921-bed2-e37cef925abc",
+            "created": "2024-05-13T10:36:45.450266Z",
+            "modified": "2024-05-13T10:36:45.450266Z",
+            "relationship_type": "delivers",
+            "source_ref": "infrastructure--5acfcb1f-6a3e-47b1-80c2-0bc160cb74bc",
+            "target_ref": "malware--ac6c1eaa-0ab9-4f69-a1c9-6c2829cfc4e8"
+        },
+        {
+            "type": "location",
+            "spec_version": "2.1",
+            "id": "location--3725d585-f28b-461a-842d-2a10b5c760c0",
+            "created": "2024-05-13T10:36:45.450266Z",
+            "modified": "2024-05-13T10:36:45.450266Z",
+            "name": "Hong Kong",
+            "description": "The payload was hosted on a server in Hong Kong",
+            "country": "Hong Kong"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--080b42a4-8a01-4a5a-8770-ecb23a3f2224",
+            "created": "2024-05-13T10:36:45.450266Z",
+            "modified": "2024-05-13T10:36:45.450266Z",
+            "relationship_type": "located-at",
+            "source_ref": "infrastructure--5acfcb1f-6a3e-47b1-80c2-0bc160cb74bc",
+            "target_ref": "location--3725d585-f28b-461a-842d-2a10b5c760c0"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--84b7ed44-234e-4c8d-aa80-6a273f089adf",
+            "created": "2024-05-13T10:36:45.450266Z",
+            "modified": "2024-05-13T10:36:45.450266Z",
+            "name": "28542CC0.dll",
+            "description": "Upon execution, 8aba4b5184072f2a50cbc5ecfe326701 writes \u201c28542CC0.dll\u201d (MD5:46fd936bada07819f61ec3790cb08e19)",
+            "pattern": "[file:hashes.'MD5' = '46fd936bada07819f61ec3790cb08e19']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2024-05-13T10:36:45.450266Z"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--dcfba7d1-9bee-4229-9c6c-0b3a2c64c6ef",
+            "created": "2024-05-13T10:36:45.454266Z",
+            "modified": "2024-05-13T10:36:45.454266Z",
+            "relationship_type": "drops",
+            "source_ref": "malware--ac6c1eaa-0ab9-4f69-a1c9-6c2829cfc4e8",
+            "target_ref": "indicator--84b7ed44-234e-4c8d-aa80-6a273f089adf"
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--f9fdf172-1381-4d53-af44-4fbb093b6aae",
+            "created": "2024-05-13T10:36:45.454266Z",
+            "modified": "2024-05-13T10:36:45.454266Z",
+            "name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder, MITRE ATT&CK T1547.001",
+            "description": "In order to maintain persistence, the original malware adds this registry key: HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\u00028542CC0"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--21037e09-a4c6-447c-a003-21338b1c1e07",
+            "created": "2024-05-13T10:36:45.454266Z",
+            "modified": "2024-05-13T10:36:45.454266Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--ac6c1eaa-0ab9-4f69-a1c9-6c2829cfc4e8",
+            "target_ref": "attack-pattern--f9fdf172-1381-4d53-af44-4fbb093b6aae"
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--03003288-b040-4959-a8a7-1e01d1b188bd",
+            "created": "2024-05-13T10:36:45.454266Z",
+            "modified": "2024-05-13T10:36:45.454266Z",
+            "name": "Masquerading: Masquerade File Type, MITRE ATT&CK T1036.008",
+            "description": "he payload was hosted on a server in Hong Kong (210.176.3.130) and was named \u201cimg20130823.jpg\u201d. Although it had a .jpg file extension, it was not an image file. The file, when XORed with 0\u00d795, was an executable (MD5: 8aba4b5184072f2a50cbc5ecfe326701)."
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--bc9edf45-a141-4732-8113-abc50314a3d5",
+            "created": "2024-05-13T10:36:45.454266Z",
+            "modified": "2024-05-13T10:36:45.454266Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--ac6c1eaa-0ab9-4f69-a1c9-6c2829cfc4e8",
+            "target_ref": "attack-pattern--03003288-b040-4959-a8a7-1e01d1b188bd"
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--461092b0-fb44-4928-a528-05708647c7fa",
+            "created": "2024-05-13T10:36:45.455266Z",
+            "modified": "2024-05-13T10:36:45.455266Z",
+            "name": "Command and Control, Application Layer Protocol: Web Protocols, MITRE ATT&CK T1071.001",
+            "description": "The unique HTTP header \u201cAgtid:\u201d contains 8 characters followed by \u201c08x\u201d. The same pattern can be seen in the POST content as well"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--e23ba319-e362-4813-9ba3-e2d9a9acd697",
+            "created": "2024-05-13T10:36:45.455266Z",
+            "modified": "2024-05-13T10:36:45.455266Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--ac6c1eaa-0ab9-4f69-a1c9-6c2829cfc4e8",
+            "target_ref": "attack-pattern--461092b0-fb44-4928-a528-05708647c7fa"
+        },
+        {
+            "type": "infrastructure",
+            "spec_version": "2.1",
+            "id": "infrastructure--d67d4d6a-2040-4bf5-8147-e5b55cb00fd0",
+            "created": "2024-05-13T10:36:45.455266Z",
+            "modified": "2024-05-13T10:36:45.455266Z",
+            "name": "CC Server in South Korea",
+            "description": "The malware (8aba4b5184072f2a50cbc5ecfe326701) then connects to a host in South Korea (180.150.228.102).",
+            "aliases": [
+                "180.150.228.102"
+            ]
+        },
+        {
+            "type": "ipv4-addr",
+            "spec_version": "2.1",
+            "id": "ipv4-addr--46bd8f46-45aa-564c-8f22-76459b035955",
+            "value": "80.150.228.102"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--56dc21bc-85ea-4c7b-a20b-b1ad131cafcb",
+            "created": "2024-05-13T10:36:45.455266Z",
+            "modified": "2024-05-13T10:36:45.455266Z",
+            "relationship_type": "consists-of",
+            "source_ref": "infrastructure--d67d4d6a-2040-4bf5-8147-e5b55cb00fd0",
+            "target_ref": "ipv4-addr--46bd8f46-45aa-564c-8f22-76459b035955"
+        },
+        {
+            "type": "location",
+            "spec_version": "2.1",
+            "id": "location--a908c290-6ffc-4e82-a37a-e0986a93d83f",
+            "created": "2024-05-13T10:36:45.455266Z",
+            "modified": "2024-05-13T10:36:45.455266Z",
+            "name": "South Korea",
+            "country": "South Korea"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--6746a5e6-8f0a-4185-92c7-f947452d7159",
+            "created": "2024-05-13T10:36:45.455266Z",
+            "modified": "2024-05-13T10:36:45.455266Z",
+            "relationship_type": "located-at",
+            "source_ref": "infrastructure--d67d4d6a-2040-4bf5-8147-e5b55cb00fd0",
+            "target_ref": "location--a908c290-6ffc-4e82-a37a-e0986a93d83f"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--eb137fac-fc69-4f28-a91c-62bae6748f79",
+            "created": "2024-05-13T10:36:45.455266Z",
+            "modified": "2024-05-13T10:36:45.455266Z",
+            "relationship_type": "communicates-with",
+            "source_ref": "malware--ac6c1eaa-0ab9-4f69-a1c9-6c2829cfc4e8",
+            "target_ref": "infrastructure--d67d4d6a-2040-4bf5-8147-e5b55cb00fd0"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--c573bace-02f2-4db2-a232-5f5be3165c3c",
+            "created": "2024-05-13T10:36:45.455266Z",
+            "modified": "2024-05-13T10:36:45.455266Z",
+            "name": "Network Pattern",
+            "description": "This callback traffic is HTTP over port 443 (which is typically used for HTTPS encrypted traffic; however, the traffic is not HTTPS nor SSL encrypted). [...] The unique HTTP header 'Agtid:' contains 8 characters followed by '08x'. The same pattern can be seen in the POST content as well.",
+            "pattern": "[network-traffic:src_port = 443 AND network-traffic:extensions.'http-request-ext'.request_method = 'POST' AND network-traffic:extensions.'http-request-ext'.request_value = 'Agtid:']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2024-05-13T10:36:45.455266Z"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--4dae599b-0216-4741-a946-570dcad86a62",
+            "created": "2024-05-13T10:36:45.457475Z",
+            "modified": "2024-05-13T10:36:45.457475Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--c573bace-02f2-4db2-a232-5f5be3165c3c",
+            "target_ref": "malware--ac6c1eaa-0ab9-4f69-a1c9-6c2829cfc4e8"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--601725bf-64e5-4ede-a46f-102594472229",
+            "created": "2024-05-13T10:36:45.457475Z",
+            "modified": "2024-05-13T10:36:45.457475Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--c573bace-02f2-4db2-a232-5f5be3165c3c",
+            "target_ref": "attack-pattern--461092b0-fb44-4928-a528-05708647c7fa"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--93fc99bf-a513-41d4-b613-2d79e785254f",
+            "created": "2024-05-13T10:36:45.457475Z",
+            "modified": "2024-05-13T10:36:45.457475Z",
+            "name": "sun.css",
+            "description": "The sun.css file was a malicious executable with an MD5 of bd07926c72739bb7121cec8a2863ad87 and it communicated with the same communications protocol described above to the same command and control server at 180.150.228.102.",
+            "is_family": false,
+            "aliases": [
+                "bd07926c72739bb7121cec8a2863ad87"
+            ]
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--a9549686-8620-410d-aa63-d402ca8f30b5",
+            "created": "2024-05-13T10:36:45.457475Z",
+            "modified": "2024-05-13T10:36:45.457475Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--c573bace-02f2-4db2-a232-5f5be3165c3c",
+            "target_ref": "malware--93fc99bf-a513-41d4-b613-2d79e785254f"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--8f18c6ca-20fb-448f-ac61-76d3a133cbb6",
+            "created": "2024-05-13T10:36:45.458474Z",
+            "modified": "2024-05-13T10:36:45.458474Z",
+            "relationship_type": "communicates-with",
+            "source_ref": "malware--93fc99bf-a513-41d4-b613-2d79e785254f",
+            "target_ref": "infrastructure--d67d4d6a-2040-4bf5-8147-e5b55cb00fd0"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--9090f1cd-1538-4a8f-b32b-e2867515d7d4",
+            "created": "2024-05-13T10:36:45.458474Z",
+            "modified": "2024-05-13T10:36:45.458474Z",
+            "relationship_type": "uses",
+            "source_ref": "campaign--a0f6fefc-c769-4ecb-9a2f-b3eefe3a4aad",
+            "target_ref": "malware--93fc99bf-a513-41d4-b613-2d79e785254f"
+        },
+        {
+            "type": "infrastructure",
+            "spec_version": "2.1",
+            "id": "infrastructure--8b166379-a452-45e4-a82a-8eef5297df9a",
+            "created": "2024-05-13T10:36:45.458474Z",
+            "modified": "2024-05-13T10:36:45.458474Z",
+            "name": "Server that delivered sun.css",
+            "description": "A second related sample was also delivered from 111.118.21.105/css/sun.css on September 5, 2013.",
+            "aliases": [
+                "111.118.21.105"
+            ]
+        },
+        {
+            "type": "ipv4-addr",
+            "spec_version": "2.1",
+            "id": "ipv4-addr--d32aed89-723f-5fb4-9c50-6b255f19879a",
+            "value": "111.118.21.105"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--1106e992-5802-4e69-9b37-67632adbd658",
+            "created": "2024-05-13T10:36:45.458474Z",
+            "modified": "2024-05-13T10:36:45.458474Z",
+            "relationship_type": "consists-of",
+            "source_ref": "infrastructure--8b166379-a452-45e4-a82a-8eef5297df9a",
+            "target_ref": "ipv4-addr--d32aed89-723f-5fb4-9c50-6b255f19879a"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--77d34308-db95-4a04-93d0-8f52e6296a85",
+            "created": "2024-05-13T10:36:45.458474Z",
+            "modified": "2024-05-13T10:36:45.458474Z",
+            "relationship_type": "delivers",
+            "source_ref": "infrastructure--8b166379-a452-45e4-a82a-8eef5297df9a",
+            "target_ref": "malware--93fc99bf-a513-41d4-b613-2d79e785254f"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--35a502b4-7839-4652-bee2-01b9ddb6c176",
+            "created": "2024-05-13T10:36:45.458474Z",
+            "modified": "2024-05-13T10:36:45.458474Z",
+            "name": "DGGYDSYRL",
+            "description": "These samples both had a string that may have been an artifact of the builder used to create the binaries. This string was \u201cDGGYDSYRL\u201d, which we refer to as \u201cDeputyDog\u201d. As such, we developed the following YARA signature, based on this unique attribute",
+            "pattern": "rule APT_DeputyDog_Strings {\n meta: \n author = \"FireEye Labs\" \n version = \"1.0\" \n description = \"detects string seen in samples used in 2013-3893 0day attacks\" \n reference = \"8aba4b5184072f2a50cbc5ecfe326701\" \n strings: \n $mz = {4d 5a} \n $a = \"DGGYDSYRL\" \n condition: \n ($mz at 0) and $a \n}",
+            "pattern_type": "yara",
+            "valid_from": "2024-05-13T10:36:45.458474Z"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--ddf815c3-8a22-43db-9da9-083c7e242d8f",
+            "created": "2024-05-13T10:36:45.458474Z",
+            "modified": "2024-05-13T10:36:45.458474Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--35a502b4-7839-4652-bee2-01b9ddb6c176",
+            "target_ref": "malware--ac6c1eaa-0ab9-4f69-a1c9-6c2829cfc4e8"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--02442251-75ed-44f6-89ac-729030b5b9e9",
+            "created": "2024-05-13T10:36:45.458474Z",
+            "modified": "2024-05-13T10:36:45.458474Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--35a502b4-7839-4652-bee2-01b9ddb6c176",
+            "target_ref": "malware--93fc99bf-a513-41d4-b613-2d79e785254f"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--60390234-af75-4735-8704-cd87f2c4a0fd",
+            "created": "2024-05-13T10:36:45.458474Z",
+            "modified": "2024-05-13T10:36:45.458474Z",
+            "name": "Potential Samples Hashes",
+            "description": "We used this signature to identify 5 other potentially related samples",
+            "pattern": "[file:hashes.'MD5' = '58dc05118ef8b11dcb5f5c596ab772fd' OR file:hashes.'MD5' = '4d257e569539973ab0bbafee8fb87582' OR file:hashes.'MD5' = 'dbdb1032d7bb4757d6011fb1d077856c' OR file:hashes.'MD5' = '645e29b7c6319295ae8b13ce8575dc1d' OR file:hashes.'MD5' = 'e9c73997694a897d3c6aadb26ed34797']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2024-05-13T10:36:45.458474Z"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--82c437e5-4110-445e-a180-009ffd2d2f07",
+            "created": "2024-05-13T10:36:45.459475Z",
+            "modified": "2024-05-13T10:36:45.459475Z",
+            "relationship_type": "related-to",
+            "source_ref": "indicator--60390234-af75-4735-8704-cd87f2c4a0fd",
+            "target_ref": "indicator--35a502b4-7839-4652-bee2-01b9ddb6c176"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--4f1e8d2f-a82b-405a-a64d-a3586772e517",
+            "created": "2024-05-13T10:36:45.459475Z",
+            "modified": "2024-05-13T10:36:45.459475Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--60390234-af75-4735-8704-cd87f2c4a0fd",
+            "target_ref": "malware--ac6c1eaa-0ab9-4f69-a1c9-6c2829cfc4e8"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--1bdf57d8-dff5-4fbc-b7af-77e7fa29c082",
+            "created": "2024-05-13T10:36:45.459475Z",
+            "modified": "2024-05-13T10:36:45.459475Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--60390234-af75-4735-8704-cd87f2c4a0fd",
+            "target_ref": "malware--93fc99bf-a513-41d4-b613-2d79e785254f"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--d5f5941d-efa5-48e7-aeda-81db6e675278",
+            "created": "2024-05-13T10:36:45.459475Z",
+            "modified": "2024-05-13T10:36:45.459475Z",
+            "name": "Known Malicious Domains",
+            "description": "We pivoted off the command and control IP addresses used by these samples and found the following known malicious domains recently pointed to 180.150.228.102.",
+            "pattern": "[domain-name:value = 'ea.blankchair.com ' OR domain-name:value = 'rt.blankchair.com' OR domain-name:value = 'ali.blankchair.com' OR domain-value:name = 'dll.freshdns.org']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2024-05-13T10:36:45.459475Z"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--c1bbccfb-4d51-4e6b-9a89-30d3f152714a",
+            "created": "2024-05-13T10:36:45.460977Z",
+            "modified": "2024-05-13T10:36:45.460977Z",
+            "relationship_type": "related-to",
+            "source_ref": "indicator--60390234-af75-4735-8704-cd87f2c4a0fd",
+            "target_ref": "indicator--d5f5941d-efa5-48e7-aeda-81db6e675278"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--247cb0aa-166f-41fe-af7b-8b1d98d7a9ec",
+            "created": "2024-05-13T10:36:45.460977Z",
+            "modified": "2024-05-13T10:36:45.460977Z",
+            "relationship_type": "related-to",
+            "source_ref": "infrastructure--d67d4d6a-2040-4bf5-8147-e5b55cb00fd0",
+            "target_ref": "indicator--d5f5941d-efa5-48e7-aeda-81db6e675278"
+        },
+        {
+            "type": "infrastructure",
+            "spec_version": "2.1",
+            "id": "infrastructure--d6040e7a-cd55-4703-b8ed-8fb3de084495",
+            "created": "2024-05-13T10:36:45.460977Z",
+            "modified": "2024-05-13T10:36:45.460977Z",
+            "name": "Bit9",
+            "description": "According to Bit9, the attackers that penetrated their network dropped two variants of the HiKit rootkit."
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--9d7d9c28-1051-4e5c-975e-78c1b7644023",
+            "created": "2024-05-13T10:36:45.460977Z",
+            "modified": "2024-05-13T10:36:45.460977Z",
+            "relationship_type": "targets",
+            "source_ref": "campaign--a59378f6-8bdf-4729-90b9-5318aadc0882",
+            "target_ref": "infrastructure--d6040e7a-cd55-4703-b8ed-8fb3de084495"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--ccdd479c-6049-4ac8-9119-4b66f894ee9f",
+            "created": "2024-05-13T10:36:45.460977Z",
+            "modified": "2024-05-13T10:36:45.460977Z",
+            "name": "HiKit Rootkit",
+            "description": "According to Bit9, the attackers that penetrated their network dropped two variants of the HiKit rootkit.",
+            "is_family": true
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--6331e22f-76b6-4df1-90f8-56d0a8950c8a",
+            "created": "2024-05-13T10:36:45.46198Z",
+            "modified": "2024-05-13T10:36:45.46198Z",
+            "relationship_type": "uses",
+            "source_ref": "campaign--a59378f6-8bdf-4729-90b9-5318aadc0882",
+            "target_ref": "malware--ccdd479c-6049-4ac8-9119-4b66f894ee9f"
+        },
+        {
+            "type": "infrastructure",
+            "spec_version": "2.1",
+            "id": "infrastructure--e4b2a80a-299b-4849-9d12-bbe13e9f4035",
+            "created": "2024-05-13T10:36:45.46198Z",
+            "modified": "2024-05-13T10:36:45.46198Z",
+            "name": "Command and Control Server for HiKit Rootkit",
+            "description": "One of these Hitkit samples connected to a command and control server at downloadmp3server[.]servemp3[.]com that resolved to 66.153.86.14. This same IP address also hosted www[.]yahooeast[.]net, a known malicious domain, between March 6, 2012 and April 22, 2012.",
+            "aliases": [
+                "downloadmp3server[.]servemp3[.]com",
+                "66.153.86.14",
+                "www[.]yahooeast[.]net"
+            ]
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--84cc5fa8-6417-451e-aedc-7fbb11363415",
+            "created": "2024-05-13T10:36:45.46198Z",
+            "modified": "2024-05-13T10:36:45.46198Z",
+            "relationship_type": "communicates-with",
+            "source_ref": "malware--ccdd479c-6049-4ac8-9119-4b66f894ee9f",
+            "target_ref": "infrastructure--e4b2a80a-299b-4849-9d12-bbe13e9f4035"
+        },
+        {
+            "type": "url",
+            "spec_version": "2.1",
+            "id": "url--247b7dc7-d99c-5a9a-9acf-9fd3b08f265d",
+            "value": "downloadmp3server.servemp3.com"
+        },
+        {
+            "type": "ipv4-addr",
+            "spec_version": "2.1",
+            "id": "ipv4-addr--2cd839c4-8fe0-5a51-8694-b7bb1515eb39",
+            "value": "66.153.86.14"
+        },
+        {
+            "type": "url",
+            "spec_version": "2.1",
+            "id": "url--00d5f496-2f06-5ca7-ac2b-1030e84cd147",
+            "value": "www.yahooeast.net"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--d140a61e-52cf-48e9-9bef-86f92c30f8a3",
+            "created": "2024-05-13T10:36:45.46198Z",
+            "modified": "2024-05-13T10:36:45.46198Z",
+            "relationship_type": "consists-of",
+            "source_ref": "infrastructure--e4b2a80a-299b-4849-9d12-bbe13e9f4035",
+            "target_ref": "ipv4-addr--2cd839c4-8fe0-5a51-8694-b7bb1515eb39"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--595a8d0c-ddc5-46db-bfc0-d6eae6246d31",
+            "created": "2024-05-13T10:36:45.46198Z",
+            "modified": "2024-05-13T10:36:45.46198Z",
+            "relationship_type": "consists-of",
+            "source_ref": "infrastructure--e4b2a80a-299b-4849-9d12-bbe13e9f4035",
+            "target_ref": "url--247b7dc7-d99c-5a9a-9acf-9fd3b08f265d"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--4cd23a52-e7f4-4d9d-baf8-fb8a03fb197a",
+            "created": "2024-05-13T10:36:45.46198Z",
+            "modified": "2024-05-13T10:36:45.46198Z",
+            "relationship_type": "consists-of",
+            "source_ref": "infrastructure--e4b2a80a-299b-4849-9d12-bbe13e9f4035",
+            "target_ref": "url--00d5f496-2f06-5ca7-ac2b-1030e84cd147"
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--4e2796a5-4abd-4f84-bdf6-d6deeacaf372",
+            "created": "2024-05-13T10:36:45.46198Z",
+            "modified": "2024-05-13T10:36:45.46198Z",
+            "name": "654@123.com",
+            "description": "The domain yahooeast[.]net was registered to 654@123.com. This email address was also used to register blankchair[.]com \u2013 the domain that we see was pointed to the 180.150.228.102 IP, which is the callback associated with sample 58dc05118ef8b11dcb5f5c596ab772fd, and has been already correlated back to the attack leveraging the CVE-2013-3893 zero-day vulnerability."
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--4b54ab22-ce15-4e74-8148-6b778c4b85ac",
+            "created": "2024-05-13T10:36:45.46198Z",
+            "modified": "2024-05-13T10:36:45.46198Z",
+            "relationship_type": "related-to",
+            "source_ref": "identity--4e2796a5-4abd-4f84-bdf6-d6deeacaf372",
+            "target_ref": "url--00d5f496-2f06-5ca7-ac2b-1030e84cd147"
+        },
+        {
+            "type": "url",
+            "spec_version": "2.1",
+            "id": "url--1c3624da-bbec-5598-978a-9a7edaed0def",
+            "value": "blankchair.com"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--bdd55489-e829-4200-997e-08ff7af53f22",
+            "created": "2024-05-13T10:36:45.46198Z",
+            "modified": "2024-05-13T10:36:45.46198Z",
+            "relationship_type": "related-to",
+            "source_ref": "identity--4e2796a5-4abd-4f84-bdf6-d6deeacaf372",
+            "target_ref": "url--1c3624da-bbec-5598-978a-9a7edaed0def"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--1a0a073c-b883-4355-9f86-63431a90dd05",
+            "created": "2024-05-13T10:36:45.46198Z",
+            "modified": "2024-05-13T10:36:45.46198Z",
+            "relationship_type": "related-to",
+            "source_ref": "url--1c3624da-bbec-5598-978a-9a7edaed0def",
+            "target_ref": "indicator--d5f5941d-efa5-48e7-aeda-81db6e675278"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--0cde0bc2-2956-4d7e-a5bf-3fd9ed5ba7b3",
+            "created": "2024-05-13T10:36:45.46198Z",
+            "modified": "2024-05-13T10:36:45.46198Z",
+            "relationship_type": "related-to",
+            "source_ref": "malware--93fc99bf-a513-41d4-b613-2d79e785254f",
+            "target_ref": "malware--ac6c1eaa-0ab9-4f69-a1c9-6c2829cfc4e8"
+        }
+    ]
+}

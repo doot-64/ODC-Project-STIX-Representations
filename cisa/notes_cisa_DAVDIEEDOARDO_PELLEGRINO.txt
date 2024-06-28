@@ -1,0 +1,6 @@
+- none of the malware deployed by the WellMess campaign are labeled as families of malwares, so I treated them as single instances.
+- SVR attacks on SolarWinds are not described at all, thus there's no way for me to know if there was a specific campaign ongoing or if it was just a single opportunistic attack.
+- The attack patterns used by the threat actor are listed in excruciating detail, this means that dozens of attack patterns are actually mentioned. I selected what I understand to be the most impactful and important ones.
+- The report specifies possible mitigations for the campaign, which could be represented in stix as Course of Action entities. Despite this, I elected not to include them since the way they're written on the report
+    makes me think they're more advice to unaware companies, rather than actual technical mitigations.
+- The Sigma rules were a huge pain to parse in stix format. While I think I managed to port them accurately, some parts of the SIGMA ruleset still escape me and therefore there might be some mistakes.

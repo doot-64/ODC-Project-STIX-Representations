@@ -1,0 +1,2 @@
+- The original GraphicalProton backdoor could be considered to be a single instance as well as the https variant, but being the latter specified as a "recently introduced variant" made me think it's better labeled as a family.
+- While it is clear that the modified log described at page 25 is an Indicator of compromise, it's not clear to me how to accurately represent it in stix. I just wrote the log entry as pattern for detection, for a lack of better alternatives.

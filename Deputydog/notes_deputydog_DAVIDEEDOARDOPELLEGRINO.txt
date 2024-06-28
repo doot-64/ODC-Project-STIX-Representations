@@ -1,0 +1,4 @@
+- the unknown japanese organization targeted by the first attack could be deleted but I left it in for clarity
+- the dll file is marked as an indicator because it's dropped by both observed samples, from what I can understand from the report. ALthough, it's not clear whether the second malware, sun.css, drops a dll file as well or just another kind of file. Therefore,
+    the specific dll file mentioned in the report is linked to the first malware only.
+- it is unclear if the two malware are just variants of the same malware or two distinct malwares that operate with the same CC server. I elected to separeate the two. Therefore, some of the indicators point to both.

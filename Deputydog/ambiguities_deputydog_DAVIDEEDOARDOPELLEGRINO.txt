@@ -1,0 +1,4 @@
+- the Internet Explorer infrastructure entity could be an identity
+- the mail that some of the maliocious domains are registered to could possibly be an infrastructure
+- the hashes observed from the common signatures were labeled as indicators but could possibly be just observed entities since the associated samples are described as "potentially related".
+    Although, they're still related to some malicious domains, so I'd consider them indicators.

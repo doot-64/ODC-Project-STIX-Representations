@@ -1,0 +1,1 @@
+- The two loaders are labeled as Malware, since they are not openly available tools and their purpose is obviously malicious.

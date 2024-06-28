@@ -1,0 +1,5 @@
+- I am not sure about the specific type of masquerading used by the 1st stage loader. It's not quite Match Legitimate Name or Location (T1036.005), because the domain has a different
+    name from any legitimate one, and it isn't  Masquerade Task or Service (T1036.004) either. I labeled as generic Masquerading (T1036).
+- the browsers can be an Identity if we imagine that they can be a target specifically for the Browser Hijacking attack pattern, but since they are the main target of the
+    whole campaign, I prefer to label them as Infrastructures.
+- conversely, the targeted sites could be Infrastructures.

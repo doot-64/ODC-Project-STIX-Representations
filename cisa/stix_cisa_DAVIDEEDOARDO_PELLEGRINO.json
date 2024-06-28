@@ -1,0 +1,1407 @@
+{
+    "type": "bundle",
+    "id": "bundle--07200f61-4caf-4ea1-b440-3d06260ea258",
+    "objects": [
+        {
+            "type": "threat-actor",
+            "spec_version": "2.1",
+            "id": "threat-actor--58873e53-c179-4adb-b480-bb686b6de690",
+            "created": "2024-05-12T10:52:38.360891Z",
+            "modified": "2024-05-12T10:52:38.360891Z",
+            "name": "SVR",
+            "description": "Russian Foreign Intelligence Service (SVR) cyber actors [...] are exploiting CVE-2023-42793 at a large scale, targeting servers hosting JetBrains TeamCity software since September 2023.",
+            "aliases": [
+                "Advanced Persistent Threat 29",
+                "APT 29",
+                "the Dukes",
+                "Cozy Bear",
+                "NOBELIUM/Midnight Blizzard"
+            ],
+            "first_seen": "2013-01-01T00:00:00Z",
+            "goals": [
+                "espionage",
+                "sabotage"
+            ],
+            "sophistication": "advanced",
+            "resource_level": "government"
+        },
+        {
+            "type": "location",
+            "spec_version": "2.1",
+            "id": "location--328a840e-1716-4596-b07d-3bf21df0b598",
+            "created": "2024-05-12T10:52:38.361891Z",
+            "modified": "2024-05-12T10:52:38.361891Z",
+            "name": "Russia",
+            "country": "Russia"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--802ff115-bc3e-4f29-b26f-d70d51ca6010",
+            "created": "2024-05-12T10:52:38.361891Z",
+            "modified": "2024-05-12T10:52:38.361891Z",
+            "relationship_type": "located-at",
+            "source_ref": "threat-actor--58873e53-c179-4adb-b480-bb686b6de690",
+            "target_ref": "location--328a840e-1716-4596-b07d-3bf21df0b598"
+        },
+        {
+            "type": "infrastructure",
+            "spec_version": "2.1",
+            "id": "infrastructure--a3034ff9-fc8d-4915-b7d5-56a97134b1de",
+            "created": "2024-05-12T10:52:38.361891Z",
+            "modified": "2024-05-12T10:52:38.361891Z",
+            "name": "JetBrains TeamCity",
+            "description": "Software developers use TeamCity software to manage and automate software compilation, building, testing, and releasing."
+        },
+        {
+            "type": "vulnerability",
+            "spec_version": "2.1",
+            "id": "vulnerability--9b96dff9-0a71-4529-8d79-b177d354346c",
+            "created": "2024-05-12T10:52:38.361891Z",
+            "modified": "2024-05-12T10:52:38.361891Z",
+            "name": "CVE-2023-42793",
+            "description": "By choosing to exploit CVE-2023-42793, a software development program, the authoring agencies assess the SVR could benefit from access to victims, particularly by allowing the threat actors to compromise the networks of dozens of software developers."
+        },
+        {
+            "type": "campaign",
+            "spec_version": "2.1",
+            "id": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23",
+            "created": "2024-05-12T10:52:38.361891Z",
+            "modified": "2024-05-12T10:52:38.361891Z",
+            "name": "TeamCity Campaign",
+            "description": "Russian Foreign Intelligence Service (SVR) cyber actors [...] are exploiting CVE-2023-42793 at a large scale, targeting servers hosting JetBrains TeamCity software since September 2023.",
+            "first_seen": "2023-09-01T00:00:00Z"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--e6a6e48b-a39b-46fd-a884-0818042613ae",
+            "created": "2024-05-12T10:52:38.361891Z",
+            "modified": "2024-05-12T10:52:38.361891Z",
+            "relationship_type": "compromises",
+            "source_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23",
+            "target_ref": "infrastructure--a3034ff9-fc8d-4915-b7d5-56a97134b1de"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--1226fdb9-6d9f-4d63-941b-d070d4f96f89",
+            "created": "2024-05-12T10:52:38.361891Z",
+            "modified": "2024-05-12T10:52:38.361891Z",
+            "relationship_type": "exploits",
+            "source_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23",
+            "target_ref": "vulnerability--9b96dff9-0a71-4529-8d79-b177d354346c"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--b9688036-4669-474c-8a19-321ce807675d",
+            "created": "2024-05-12T10:52:38.361891Z",
+            "modified": "2024-05-12T10:52:38.361891Z",
+            "relationship_type": "attributed-to",
+            "source_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23",
+            "target_ref": "threat-actor--58873e53-c179-4adb-b480-bb686b6de690"
+        },
+        {
+            "type": "infrastructure",
+            "spec_version": "2.1",
+            "id": "infrastructure--c79e9930-aca2-4f74-b340-b0c180ae1840",
+            "created": "2024-05-12T10:52:38.361891Z",
+            "modified": "2024-05-12T10:52:38.361891Z",
+            "name": "Any exploitable organization",
+            "description": "Generally, the victim types do not fit into any sort of pattern or trend, aside from having an unpatched, Internet-reachable JetBrains TeamCity server, leading to the assessment that SVR\u2019s exploitation of these victims\u2019 networks was opportunistic in nature and not necessarily a targeted attack."
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--49e382d1-9b67-463d-87e3-4f55f531e1bb",
+            "created": "2024-05-12T10:52:38.361891Z",
+            "modified": "2024-05-12T10:52:38.361891Z",
+            "relationship_type": "targets",
+            "source_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23",
+            "target_ref": "infrastructure--c79e9930-aca2-4f74-b340-b0c180ae1840"
+        },
+        {
+            "type": "infrastructure",
+            "spec_version": "2.1",
+            "id": "infrastructure--ad1e24eb-9b70-46b8-8bca-65987482e791",
+            "created": "2024-05-12T10:52:38.362891Z",
+            "modified": "2024-05-12T10:52:38.362891Z",
+            "name": "SolarWinds Orion",
+            "description": "Although the SVR used such access to compromise SolarWinds and its customers in 2020, [...]"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--fc8c3892-f21b-4cbc-92cf-2390d6c926ae",
+            "created": "2024-05-12T10:52:38.362891Z",
+            "modified": "2024-05-12T10:52:38.362891Z",
+            "relationship_type": "targets",
+            "source_ref": "threat-actor--58873e53-c179-4adb-b480-bb686b6de690",
+            "target_ref": "infrastructure--ad1e24eb-9b70-46b8-8bca-65987482e791"
+        },
+        {
+            "type": "campaign",
+            "spec_version": "2.1",
+            "id": "campaign--699d075d-3c6c-4fc4-b724-d3952ea8f5b8",
+            "created": "2024-05-12T10:52:38.362891Z",
+            "modified": "2024-05-12T10:52:38.362891Z",
+            "name": "Spearphishing Campaign",
+            "description": "A decade ago, public reports about SVR cyber activity focused largely on the SVR\u2019s spearphishing operations, targeting government agencies, think tanks and policy analysis organizations, educational institutions, and political organizations."
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--32416d1f-8b26-4bb7-bf8b-84f66a9bc82f",
+            "created": "2024-05-12T10:52:38.362891Z",
+            "modified": "2024-05-12T10:52:38.362891Z",
+            "relationship_type": "attributed-to",
+            "source_ref": "campaign--699d075d-3c6c-4fc4-b724-d3952ea8f5b8",
+            "target_ref": "threat-actor--58873e53-c179-4adb-b480-bb686b6de690"
+        },
+        {
+            "type": "infrastructure",
+            "spec_version": "2.1",
+            "id": "infrastructure--f3f67545-cd60-42a3-a2de-b9eefa4a20a3",
+            "created": "2024-05-12T10:52:38.362891Z",
+            "modified": "2024-05-12T10:52:38.362891Z",
+            "name": "Government agencies, think tanks, policy analysis organizations, educational institutions, political organizations",
+            "description": "The SVR\u2019s spearphishing operations have targeted government agencies, think tanks and policy analysis organizations, educational institutions, and political organizations."
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--c57a9551-fd54-4b73-a2b9-a281ae357c14",
+            "created": "2024-05-12T10:52:38.362891Z",
+            "modified": "2024-05-12T10:52:38.362891Z",
+            "relationship_type": "targets",
+            "source_ref": "campaign--699d075d-3c6c-4fc4-b724-d3952ea8f5b8",
+            "target_ref": "infrastructure--f3f67545-cd60-42a3-a2de-b9eefa4a20a3"
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--ebd175ea-63b2-4f3c-bf30-01b14e8e78dd",
+            "created": "2024-05-12T10:52:38.362891Z",
+            "modified": "2024-05-12T10:52:38.362891Z",
+            "name": "Spearphishing - MITRE T1566",
+            "description": "The SVR\u2019s spearphishing operations have targeted government agencies, think tanks and policy analysis organizations, educational institutions, and political organizations."
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--2fd0a173-5273-4f72-9094-0e787117307a",
+            "created": "2024-05-12T10:52:38.362891Z",
+            "modified": "2024-05-12T10:52:38.362891Z",
+            "relationship_type": "uses",
+            "source_ref": "campaign--699d075d-3c6c-4fc4-b724-d3952ea8f5b8",
+            "target_ref": "attack-pattern--ebd175ea-63b2-4f3c-bf30-01b14e8e78dd"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--1c42c5c0-b247-489d-868c-7f158b4604d3",
+            "created": "2024-05-12T10:52:38.362891Z",
+            "modified": "2024-05-12T10:52:38.362891Z",
+            "relationship_type": "related-to",
+            "source_ref": "report--a1fc8e82-f503-43ba-8650-fbb934c0b4c8",
+            "target_ref": "campaign--699d075d-3c6c-4fc4-b724-d3952ea8f5b8"
+        },
+        {
+            "type": "campaign",
+            "spec_version": "2.1",
+            "id": "campaign--402ca425-3c37-41b8-b48a-65c6a1d1dea3",
+            "created": "2024-05-12T10:52:38.362891Z",
+            "modified": "2024-05-12T10:52:38.362891Z",
+            "name": "Diplomatic Orbiter Campaign",
+            "description": "The SVR\u2019s use of spear phishing operations are visible today in its ongoing Diplomatic Orbiter campaign, primarily targeting diplomatic agencies."
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--cecfdb36-ad77-4509-96ad-2396c5467c13",
+            "created": "2024-05-12T10:52:38.362891Z",
+            "modified": "2024-05-12T10:52:38.362891Z",
+            "relationship_type": "attributed-to",
+            "source_ref": "campaign--402ca425-3c37-41b8-b48a-65c6a1d1dea3",
+            "target_ref": "threat-actor--58873e53-c179-4adb-b480-bb686b6de690"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--b1dd32fa-aef8-494b-ae11-727dca7338b9",
+            "created": "2024-05-12T10:52:38.362891Z",
+            "modified": "2024-05-12T10:52:38.362891Z",
+            "relationship_type": "uses",
+            "source_ref": "campaign--402ca425-3c37-41b8-b48a-65c6a1d1dea3",
+            "target_ref": "attack-pattern--ebd175ea-63b2-4f3c-bf30-01b14e8e78dd"
+        },
+        {
+            "type": "infrastructure",
+            "spec_version": "2.1",
+            "id": "infrastructure--c67fb325-1a20-4096-bb17-49df6b0d6c59",
+            "created": "2024-05-12T10:52:38.363891Z",
+            "modified": "2024-05-12T10:52:38.363891Z",
+            "name": "Diplomatic agencies",
+            "description": "The SVR\u2019s use of spear phishing operations are visible today in its ongoing Diplomatic Orbiter campaign, primarily targeting diplomatic agencies."
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--2a6bdf41-df06-4d74-bbc8-e04d81814344",
+            "created": "2024-05-12T10:52:38.363891Z",
+            "modified": "2024-05-12T10:52:38.363891Z",
+            "relationship_type": "targets",
+            "source_ref": "campaign--402ca425-3c37-41b8-b48a-65c6a1d1dea3",
+            "target_ref": "infrastructure--c67fb325-1a20-4096-bb17-49df6b0d6c59"
+        },
+        {
+            "type": "campaign",
+            "spec_version": "2.1",
+            "id": "campaign--adf5cae0-7774-4ae3-b308-90c6091b8779",
+            "created": "2024-05-12T10:52:38.363891Z",
+            "modified": "2024-05-12T10:52:38.363891Z",
+            "name": "WellMess Campaign",
+            "description": "n July 2020, U.S., U.K., and Canadian Governments jointly published an advisory revealing the SVR\u2019s exploitation of CVEs to gain initial access to networks, and its deployment of custom malware known as WellMess, WellMail, and Sorefang to target organizations involved in COVID-19 vaccine development."
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--c3030bbd-1eb2-467b-b594-42d08d514660",
+            "created": "2024-05-12T10:52:38.363891Z",
+            "modified": "2024-05-12T10:52:38.363891Z",
+            "relationship_type": "attributed-to",
+            "source_ref": "campaign--adf5cae0-7774-4ae3-b308-90c6091b8779",
+            "target_ref": "threat-actor--58873e53-c179-4adb-b480-bb686b6de690"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--7bd4479e-ee0c-4895-8211-75b360d3a04b",
+            "created": "2024-05-12T10:52:38.363891Z",
+            "modified": "2024-05-12T10:52:38.363891Z",
+            "name": "WellMess",
+            "description": "In July 2020, U.S., U.K., and Canadian Governments jointly published an advisory revealing the SVR\u2019s exploitation of CVEs to gain initial access to networks, and its deployment of custom malware known as WellMess, WellMail, and Sorefang to target organizations involved in COVID-19 vaccine development.",
+            "is_family": false,
+            "first_seen": "2020-07-01T00:00:00Z"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--aeb5b797-29a5-4bb9-ae3e-09677914b0c2",
+            "created": "2024-05-12T10:52:38.363891Z",
+            "modified": "2024-05-12T10:52:38.363891Z",
+            "name": "WellMail",
+            "description": "In July 2020, U.S., U.K., and Canadian Governments jointly published an advisory revealing the SVR\u2019s exploitation of CVEs to gain initial access to networks, and its deployment of custom malware known as WellMess, WellMail, and Sorefang to target organizations involved in COVID-19 vaccine development.",
+            "is_family": false,
+            "first_seen": "2020-07-01T00:00:00Z"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--8ab796c1-fef0-4112-9a06-624873edb3ba",
+            "created": "2024-05-12T10:52:38.363891Z",
+            "modified": "2024-05-12T10:52:38.363891Z",
+            "name": "Sorefang",
+            "description": "In July 2020, U.S., U.K., and Canadian Governments jointly published an advisory revealing the SVR\u2019s exploitation of CVEs to gain initial access to networks, and its deployment of custom malware known as WellMess, WellMail, and Sorefang to target organizations involved in COVID-19 vaccine development.",
+            "is_family": false,
+            "first_seen": "2020-07-01T00:00:00Z"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--99498510-572c-409c-b844-3511292d639b",
+            "created": "2024-05-12T10:52:38.363891Z",
+            "modified": "2024-05-12T10:52:38.363891Z",
+            "relationship_type": "uses",
+            "source_ref": "campaign--adf5cae0-7774-4ae3-b308-90c6091b8779",
+            "target_ref": "malware--7bd4479e-ee0c-4895-8211-75b360d3a04b"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--e59475c2-63a5-49c6-ba77-332ce83daf9c",
+            "created": "2024-05-12T10:52:38.363891Z",
+            "modified": "2024-05-12T10:52:38.363891Z",
+            "relationship_type": "uses",
+            "source_ref": "campaign--adf5cae0-7774-4ae3-b308-90c6091b8779",
+            "target_ref": "malware--aeb5b797-29a5-4bb9-ae3e-09677914b0c2"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--77e4af7b-462d-4a46-b7ac-00f413c6535d",
+            "created": "2024-05-12T10:52:38.363891Z",
+            "modified": "2024-05-12T10:52:38.363891Z",
+            "relationship_type": "uses",
+            "source_ref": "campaign--adf5cae0-7774-4ae3-b308-90c6091b8779",
+            "target_ref": "malware--8ab796c1-fef0-4112-9a06-624873edb3ba"
+        },
+        {
+            "type": "infrastructure",
+            "spec_version": "2.1",
+            "id": "infrastructure--78520271-6073-4d10-b99d-617080d847fe",
+            "created": "2024-05-12T10:52:38.363891Z",
+            "modified": "2024-05-12T10:52:38.363891Z",
+            "name": "Organizations involved in COVID-19 vaccine development",
+            "description": "In July 2020, U.S., U.K., and Canadian Governments jointly published an advisory revealing the SVR\u2019s exploitation of CVEs to gain initial access to networks, and its deployment of custom malware known as WellMess, WellMail, and Sorefang to target organizations involved in COVID-19 vaccine development."
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--595f526f-0763-449b-b815-7a02e05a78e6",
+            "created": "2024-05-12T10:52:38.363891Z",
+            "modified": "2024-05-12T10:52:38.363891Z",
+            "relationship_type": "targets",
+            "source_ref": "campaign--adf5cae0-7774-4ae3-b308-90c6091b8779",
+            "target_ref": "infrastructure--78520271-6073-4d10-b99d-617080d847fe"
+        },
+        {
+            "type": "infrastructure",
+            "spec_version": "2.1",
+            "id": "infrastructure--1e6b4bf8-bb24-4f33-b0d8-e104f1b7faf2",
+            "created": "2024-05-12T10:52:38.364891Z",
+            "modified": "2024-05-12T10:52:38.364891Z",
+            "name": "Energy companies",
+            "description": "Although not listed in the 2020 advisory, the authoring agencies can now disclose that the SVR\u2019s WellMess campaign also targeted energy companies."
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--f9a1ab7c-531c-4bb4-a026-1c2c8288490a",
+            "created": "2024-05-12T10:52:38.364891Z",
+            "modified": "2024-05-12T10:52:38.364891Z",
+            "relationship_type": "targets",
+            "source_ref": "campaign--adf5cae0-7774-4ae3-b308-90c6091b8779",
+            "target_ref": "infrastructure--1e6b4bf8-bb24-4f33-b0d8-e104f1b7faf2"
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--937ee65b-9a7c-4aec-b3dd-6225dfdb82eb",
+            "created": "2024-05-12T10:52:38.364891Z",
+            "modified": "2024-05-12T10:52:38.364891Z",
+            "name": "Network Service Discovery - MITRE T1046",
+            "description": "The SVR performed network reconnaissance using a mix of built-in commands and additional tools, such as port scanner and PowerSploit, which it launched into memory [T1046]. "
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--a1aca943-1081-404b-9ca2-bf4880876951",
+            "created": "2024-05-12T10:52:38.364891Z",
+            "modified": "2024-05-12T10:52:38.364891Z",
+            "relationship_type": "uses",
+            "source_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23",
+            "target_ref": "attack-pattern--937ee65b-9a7c-4aec-b3dd-6225dfdb82eb"
+        },
+        {
+            "type": "tool",
+            "spec_version": "2.1",
+            "id": "tool--c398079d-6145-42d8-8234-22b3912c3a31",
+            "created": "2024-05-12T10:52:38.364891Z",
+            "modified": "2024-05-12T10:52:38.364891Z",
+            "name": "PowerSploit",
+            "description": "The SVR performed network reconnaissance using a mix of built-in commands and additional tools, such as port scanner and PowerSploit, which it launched into memory [T1046]. "
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--7e68009a-9e7b-444e-bc67-037ce0b4ca1c",
+            "created": "2024-05-12T10:52:38.364891Z",
+            "modified": "2024-05-12T10:52:38.364891Z",
+            "relationship_type": "uses",
+            "source_ref": "attack-pattern--937ee65b-9a7c-4aec-b3dd-6225dfdb82eb",
+            "target_ref": "tool--c398079d-6145-42d8-8234-22b3912c3a31"
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--fab05c22-6ca7-46c3-b8cf-2489fdafcbb3",
+            "created": "2024-05-12T10:52:38.364891Z",
+            "modified": "2024-05-12T10:52:38.364891Z",
+            "name": "System Owner/User Discovery - MITRE T1033",
+            "description": "Initial observations show the SVR used the following basic, built-in commands to perform host reconnaissance [T1033],[T1059.003],[T1592.002]: [...]"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--a6eec850-5db4-4161-a9d8-afae786ce911",
+            "created": "2024-05-12T10:52:38.364891Z",
+            "modified": "2024-05-12T10:52:38.364891Z",
+            "relationship_type": "uses",
+            "source_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23",
+            "target_ref": "attack-pattern--fab05c22-6ca7-46c3-b8cf-2489fdafcbb3"
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--1629bd80-e181-45c3-832d-166ad6436874",
+            "created": "2024-05-12T10:52:38.364891Z",
+            "modified": "2024-05-12T10:52:38.364891Z",
+            "name": "Command and Scripting Interpreter - MITRE T1059",
+            "description": "Initial observations show the SVR used the following basic, built-in commands to perform host reconnaissance [T1033],[T1059.003],[T1592.002]: [...]"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--aef169ef-92ae-4886-b1cd-60b09104bd2d",
+            "created": "2024-05-12T10:52:38.364891Z",
+            "modified": "2024-05-12T10:52:38.364891Z",
+            "relationship_type": "uses",
+            "source_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23",
+            "target_ref": "attack-pattern--1629bd80-e181-45c3-832d-166ad6436874"
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--f9ced532-5bb9-4c41-95cd-0a5df1f5a2b4",
+            "created": "2024-05-12T10:52:38.364891Z",
+            "modified": "2024-05-12T10:52:38.364891Z",
+            "name": "Exfiltration Over Command and Control Channel - MITRE T1041",
+            "description": "Additionally, the authoring agencies have observed the SVR exfiltrating files [T1041] which may provide insight into the host system\u2019s operating system"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--f37390f5-24aa-4f26-8fba-6352da2457c8",
+            "created": "2024-05-12T10:52:38.364891Z",
+            "modified": "2024-05-12T10:52:38.364891Z",
+            "relationship_type": "uses",
+            "source_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23",
+            "target_ref": "attack-pattern--f9ced532-5bb9-4c41-95cd-0a5df1f5a2b4"
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--ac4684a8-44ee-45d2-81b1-ecbab42c654a",
+            "created": "2024-05-12T10:52:38.364891Z",
+            "modified": "2024-05-12T10:52:38.364891Z",
+            "name": "Exploitation for Privilege Escalation - MITRE T1068",
+            "description": "SVR cyber actors exploit JetBrains TeamCity vulnerability to achieve escalated privileges. To avoid detection, the SVR cyber actors used a \u201cBring Your Own Vulnerable Driver\u201d technique to disable EDR and AV defense mechanisms."
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--ec818d7b-34fd-4ff9-a5ed-d2738f5e07f3",
+            "created": "2024-05-12T10:52:38.364891Z",
+            "modified": "2024-05-12T10:52:38.364891Z",
+            "relationship_type": "uses",
+            "source_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23",
+            "target_ref": "attack-pattern--ac4684a8-44ee-45d2-81b1-ecbab42c654a"
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--68631cf2-2918-4390-a584-150ab06389a4",
+            "created": "2024-05-12T10:52:38.364891Z",
+            "modified": "2024-05-12T10:52:38.364891Z",
+            "name": "Impair Defenses - MITRE T1562",
+            "description": "To avoid detection, the SVR used a \u201cBring Your Own Vulnerable Driver\u201d [T1068] technique to disable or outright kill endpoint detection and response (EDR) and antivirus (AV) software [T1562.001]"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--30d724e3-6db9-4989-bb42-1caf5a85cbe0",
+            "created": "2024-05-12T10:52:38.364891Z",
+            "modified": "2024-05-12T10:52:38.364891Z",
+            "relationship_type": "uses",
+            "source_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23",
+            "target_ref": "attack-pattern--68631cf2-2918-4390-a584-150ab06389a4"
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--86ee08f1-96a0-4769-9b1c-b94c496dfb74",
+            "created": "2024-05-12T10:52:38.365891Z",
+            "modified": "2024-05-12T10:52:38.365891Z",
+            "name": "Boot or Logon Autostart Execution - MITRE T1547",
+            "description": "SVR cyber actors used C:\\Windows\\system32\\ntoskrnl.exe to configure automatic system boot settings to maintain persistence"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--3c30ecc5-1030-433c-8e7c-ea67642ed021",
+            "created": "2024-05-12T10:52:38.365891Z",
+            "modified": "2024-05-12T10:52:38.365891Z",
+            "relationship_type": "uses",
+            "source_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23",
+            "target_ref": "attack-pattern--86ee08f1-96a0-4769-9b1c-b94c496dfb74"
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--da319cf9-9c63-4eb8-a512-526ed679ebb2",
+            "created": "2024-05-12T10:52:38.365891Z",
+            "modified": "2024-05-12T10:52:38.365891Z",
+            "name": "Steal or Forge Kerberos Tickets - MITRE T1558",
+            "description": "To secure long-term access to the environment, the SVR used the Rubeus toolkit to craft Ticket Granting Tickets (TGTs) [T1558.001]"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--c79ec860-8be6-444a-b7a5-9db8b81292a2",
+            "created": "2024-05-12T10:52:38.365891Z",
+            "modified": "2024-05-12T10:52:38.365891Z",
+            "relationship_type": "uses",
+            "source_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23",
+            "target_ref": "attack-pattern--da319cf9-9c63-4eb8-a512-526ed679ebb2"
+        },
+        {
+            "type": "tool",
+            "spec_version": "2.1",
+            "id": "tool--4b0053f0-17d8-4d01-af29-0cae88bba7ff",
+            "created": "2024-05-12T10:52:38.365891Z",
+            "modified": "2024-05-12T10:52:38.365891Z",
+            "name": "Rubeus",
+            "description": "To secure long-term access to the environment, the SVR used the Rubeus toolkit to craft Ticket Granting Tickets (TGTs) [T1558.001]"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--1a24ad44-b8e1-41fc-a05b-a9f7023d49a5",
+            "created": "2024-05-12T10:52:38.365891Z",
+            "modified": "2024-05-12T10:52:38.365891Z",
+            "relationship_type": "uses",
+            "source_ref": "attack-pattern--da319cf9-9c63-4eb8-a512-526ed679ebb2",
+            "target_ref": "tool--4b0053f0-17d8-4d01-af29-0cae88bba7ff"
+        },
+        {
+            "type": "infrastructure",
+            "spec_version": "2.1",
+            "id": "infrastructure--51c362c7-47f7-49cb-999c-c0133a5de24d",
+            "created": "2024-05-12T10:52:38.365891Z",
+            "modified": "2024-05-12T10:52:38.365891Z",
+            "name": "OneDrive",
+            "description": "To avoid detection by network monitoring, the SVR devised a covert C2 channel that used Microsoft OneDrive and Dropbox cloud services. [...] OneDrive is used as a primary communication channel while Dropbox is treated as a backup channel [T1567]."
+        },
+        {
+            "type": "infrastructure",
+            "spec_version": "2.1",
+            "id": "infrastructure--9c339c3c-8bc0-436a-9460-2f882e476d67",
+            "created": "2024-05-12T10:52:38.365891Z",
+            "modified": "2024-05-12T10:52:38.365891Z",
+            "name": "Dropbox",
+            "description": "To avoid detection by network monitoring, the SVR devised a covert C2 channel that used Microsoft OneDrive and Dropbox cloud services. [...] OneDrive is used as a primary communication channel while Dropbox is treated as a backup channel [T1567]."
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--c3a11c8c-50c4-47a6-8da4-f9877b50df13",
+            "created": "2024-05-12T10:52:38.365891Z",
+            "modified": "2024-05-12T10:52:38.365891Z",
+            "name": "Graphical Proton",
+            "description": "GraphicalProton is a simplistic backdoor that uses OneDrive, Dropbox, and randomly generated BMPs [T1027.001] to exchange data with the SVR operator",
+            "is_family": true
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--5e8e41fe-7f94-4929-b8f6-d74dacb683f4",
+            "created": "2024-05-12T10:52:38.366891Z",
+            "modified": "2024-05-12T10:52:38.366891Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--c3a11c8c-50c4-47a6-8da4-f9877b50df13",
+            "target_ref": "infrastructure--51c362c7-47f7-49cb-999c-c0133a5de24d"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--c0477615-ef2f-4e1c-97ca-e2ccf23f5440",
+            "created": "2024-05-12T10:52:38.366891Z",
+            "modified": "2024-05-12T10:52:38.366891Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--c3a11c8c-50c4-47a6-8da4-f9877b50df13",
+            "target_ref": "infrastructure--9c339c3c-8bc0-436a-9460-2f882e476d67"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--17f5ff60-51f7-432d-8bd5-b05be395eda7",
+            "created": "2024-05-12T10:52:38.366891Z",
+            "modified": "2024-05-12T10:52:38.366891Z",
+            "relationship_type": "uses",
+            "source_ref": "attack-pattern--f9ced532-5bb9-4c41-95cd-0a5df1f5a2b4",
+            "target_ref": "malware--c3a11c8c-50c4-47a6-8da4-f9877b50df13"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--72a77b4e-7490-46c7-8181-4239b5584dee",
+            "created": "2024-05-12T10:52:38.366891Z",
+            "modified": "2024-05-12T10:52:38.366891Z",
+            "name": "GraphicalProton HTTPS variant",
+            "description": "a variant of GraphicalProton backdoor recently introduced by the SVR that forgoes using cloud-based services as a C2 channel and instead relies on HTTP request.",
+            "is_family": false
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--9499e89a-38ac-46dd-b7ac-c4e01a4028f5",
+            "created": "2024-05-12T10:52:38.366891Z",
+            "modified": "2024-05-12T10:52:38.366891Z",
+            "relationship_type": "uses",
+            "source_ref": "attack-pattern--f9ced532-5bb9-4c41-95cd-0a5df1f5a2b4",
+            "target_ref": "malware--72a77b4e-7490-46c7-8181-4239b5584dee"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--130e031b-3b1c-493c-8226-4ee4454f642c",
+            "created": "2024-05-12T10:52:38.366891Z",
+            "modified": "2024-05-12T10:52:38.366891Z",
+            "relationship_type": "derived-from",
+            "source_ref": "malware--72a77b4e-7490-46c7-8181-4239b5584dee",
+            "target_ref": "malware--c3a11c8c-50c4-47a6-8da4-f9877b50df13"
+        },
+        {
+            "type": "infrastructure",
+            "spec_version": "2.1",
+            "id": "infrastructure--ee2194f4-0fc3-4565-9fb2-8d4ee2e353cc",
+            "created": "2024-05-12T10:52:38.366891Z",
+            "modified": "2024-05-12T10:52:38.366891Z",
+            "name": "WordPress",
+            "description": "To legitimize the C2 channel, SVR used a re-registered expired domain set up with dummy WordPress website."
+        },
+        {
+            "type": "tool",
+            "spec_version": "2.1",
+            "id": "tool--3521b710-8b6e-43f7-9c2e-b402ce542097",
+            "created": "2024-05-12T10:52:38.366891Z",
+            "modified": "2024-05-12T10:52:38.366891Z",
+            "name": "SharpChromium",
+            "description": "In a few specific cases, the SVR used the SharpChromium tool to obtain sensitive browser data such as session cookies, browsing history, or saved logins"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--ea5c0328-5a59-4bb7-a564-9c414bfb8494",
+            "created": "2024-05-12T10:52:38.366891Z",
+            "modified": "2024-05-12T10:52:38.366891Z",
+            "relationship_type": "uses",
+            "source_ref": "attack-pattern--f9ced532-5bb9-4c41-95cd-0a5df1f5a2b4",
+            "target_ref": "tool--3521b710-8b6e-43f7-9c2e-b402ce542097"
+        },
+        {
+            "type": "tool",
+            "spec_version": "2.1",
+            "id": "tool--47d4f0eb-058e-40f8-bc05-e708eafdce14",
+            "created": "2024-05-12T10:52:38.366891Z",
+            "modified": "2024-05-12T10:52:38.366891Z",
+            "name": "DSinternals",
+            "description": "SVR also used DSInternals open source tool to interact with Directory Services. DSInternals allows to obtain a sensitive Domain information."
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--e71bcbeb-b169-4f60-b12a-db881a5ef3ed",
+            "created": "2024-05-12T10:52:38.366891Z",
+            "modified": "2024-05-12T10:52:38.366891Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--72a77b4e-7490-46c7-8181-4239b5584dee",
+            "target_ref": "infrastructure--ee2194f4-0fc3-4565-9fb2-8d4ee2e353cc"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--55ac63a1-31e3-4348-a16e-6f0203e7d141",
+            "created": "2024-05-12T10:52:38.367891Z",
+            "modified": "2024-05-12T10:52:38.367891Z",
+            "relationship_type": "uses",
+            "source_ref": "attack-pattern--f9ced532-5bb9-4c41-95cd-0a5df1f5a2b4",
+            "target_ref": "tool--47d4f0eb-058e-40f8-bc05-e708eafdce14"
+        },
+        {
+            "type": "tool",
+            "spec_version": "2.1",
+            "id": "tool--5ae7e289-d62a-49c9-9a2a-de9d0c156f7e",
+            "created": "2024-05-12T10:52:38.367891Z",
+            "modified": "2024-05-12T10:52:38.367891Z",
+            "name": "Rsockstun",
+            "description": "In selected environments the SVR used an additional tool named, \u201crr.exe\u201d\u2014a modified open source reverse socks tunneler named Rsockstun\u2014to establish a tunnel to the C2 infrastructure [T1572]"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--8474ef5b-34c7-4f46-a6a7-a851780146ad",
+            "created": "2024-05-12T10:52:38.367891Z",
+            "modified": "2024-05-12T10:52:38.367891Z",
+            "name": "rr.exe",
+            "description": "In selected environments the SVR used an additional tool named, \u201crr.exe\u201d\u2014a modified open source reverse socks tunneler named Rsockstun\u2014to establish a tunnel to the C2 infrastructure [T1572]",
+            "is_family": false
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--9bf4cb34-4aa2-4821-afcb-49fa5bb32c0a",
+            "created": "2024-05-12T10:52:38.367891Z",
+            "modified": "2024-05-12T10:52:38.367891Z",
+            "relationship_type": "uses",
+            "source_ref": "attack-pattern--f9ced532-5bb9-4c41-95cd-0a5df1f5a2b4",
+            "target_ref": "malware--8474ef5b-34c7-4f46-a6a7-a851780146ad"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--5c3af9e4-cb8e-4318-8e61-87149e05ef87",
+            "created": "2024-05-12T10:52:38.367891Z",
+            "modified": "2024-05-12T10:52:38.367891Z",
+            "relationship_type": "derived-from",
+            "source_ref": "malware--8474ef5b-34c7-4f46-a6a7-a851780146ad",
+            "target_ref": "tool--5ae7e289-d62a-49c9-9a2a-de9d0c156f7e"
+        },
+        {
+            "type": "infrastructure",
+            "spec_version": "2.1",
+            "id": "infrastructure--81f90e44-5c21-41f6-8c6b-788648a6cd1b",
+            "created": "2024-05-12T10:52:38.367891Z",
+            "modified": "2024-05-12T10:52:38.367891Z",
+            "name": "C2 infrastructure",
+            "description": "The authoring agencies are aware of the following infrastructure used in conjunction with \u201crr.exe\u201d: 65.20.97[.]203:443, Poetpages[.]com:8443"
+        },
+        {
+            "type": "url",
+            "spec_version": "2.1",
+            "id": "url--a16e1819-b79b-531f-a48d-63250a924211",
+            "value": "https://Poetpages.com:8443"
+        },
+        {
+            "type": "ipv4-addr",
+            "spec_version": "2.1",
+            "id": "ipv4-addr--6c7407f8-317d-57e6-9b1f-8efb4803d548",
+            "value": "65.20.97.203:443"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--970686e8-1cd4-48d4-9c52-c6a5a7995481",
+            "created": "2024-05-12T10:52:38.368891Z",
+            "modified": "2024-05-12T10:52:38.368891Z",
+            "relationship_type": "consists-of",
+            "source_ref": "infrastructure--81f90e44-5c21-41f6-8c6b-788648a6cd1b",
+            "target_ref": "url--a16e1819-b79b-531f-a48d-63250a924211"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--7358a33d-48ac-4aec-9ed8-4b11aa9cb31b",
+            "created": "2024-05-12T10:52:38.368891Z",
+            "modified": "2024-05-12T10:52:38.368891Z",
+            "relationship_type": "consists-of",
+            "source_ref": "infrastructure--81f90e44-5c21-41f6-8c6b-788648a6cd1b",
+            "target_ref": "ipv4-addr--6c7407f8-317d-57e6-9b1f-8efb4803d548"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--0bb98679-b3f6-4fe6-ad7e-a0222f66f2ad",
+            "created": "2024-05-12T10:52:38.368891Z",
+            "modified": "2024-05-12T10:52:38.368891Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--8474ef5b-34c7-4f46-a6a7-a851780146ad",
+            "target_ref": "infrastructure--81f90e44-5c21-41f6-8c6b-788648a6cd1b"
+        },
+        {
+            "type": "tool",
+            "spec_version": "2.1",
+            "id": "tool--d7b1751d-fe4d-4c81-a0c0-759bfac66c38",
+            "created": "2024-05-12T10:52:38.368891Z",
+            "modified": "2024-05-12T10:52:38.368891Z",
+            "name": "EDRSandBlast",
+            "description": "This was done using an open source project called \u201cEDRSandBlast.\u201d The authoring agencies have observed the SVR using EDRSandBlast to remove protected process light (PPL) protection, which is used for controlling and protecting running processes and protecting them from infection. "
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--ad170786-23a0-4094-a6f7-8998067c79c9",
+            "created": "2024-05-12T10:52:38.368891Z",
+            "modified": "2024-05-12T10:52:38.368891Z",
+            "relationship_type": "uses",
+            "source_ref": "attack-pattern--68631cf2-2918-4390-a584-150ab06389a4",
+            "target_ref": "tool--d7b1751d-fe4d-4c81-a0c0-759bfac66c38"
+        },
+        {
+            "type": "tool",
+            "spec_version": "2.1",
+            "id": "tool--e19623ae-3047-4cfa-80bf-f64b1f802ffd",
+            "created": "2024-05-12T10:52:38.368891Z",
+            "modified": "2024-05-12T10:52:38.368891Z",
+            "name": "Mimikatz",
+            "description": "To facilitate privilege escalation [T1098], the SVR used multiple techniques, including WinPEAS, NoLMHash registry key modification, and the Mimikatz tool."
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--1fa26aa5-604a-441b-b16b-da9eba4935d8",
+            "created": "2024-05-12T10:52:38.368891Z",
+            "modified": "2024-05-12T10:52:38.368891Z",
+            "relationship_type": "uses",
+            "source_ref": "attack-pattern--ac4684a8-44ee-45d2-81b1-ecbab42c654a",
+            "target_ref": "tool--e19623ae-3047-4cfa-80bf-f64b1f802ffd"
+        },
+        {
+            "type": "tool",
+            "spec_version": "2.1",
+            "id": "tool--fc7986eb-1350-4162-bee1-9c175177dbc5",
+            "created": "2024-05-12T10:52:38.368891Z",
+            "modified": "2024-05-12T10:52:38.368891Z",
+            "name": "VCPerf",
+            "description": "In several cases SVR attempted to hide their backdoors via: [...] backdooring an open source application developed by Microsoft named vcperf. SVR modified and copied publicly available source code. After execution, backdoored vcperf dropped several DLLs to disc, one of those being a GraphicalProton backdoor"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--efc3986c-6111-4a6c-a35c-ce1559d8787c",
+            "created": "2024-05-12T10:52:38.368891Z",
+            "modified": "2024-05-12T10:52:38.368891Z",
+            "name": "Modded VCPerf",
+            "description": "In several cases SVR attempted to hide their backdoors via: [...] backdooring an open source application developed by Microsoft named vcperf. SVR modified and copied publicly available source code. After execution, backdoored vcperf dropped several DLLs to disc, one of those being a GraphicalProton backdoor",
+            "is_family": false
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--47c75244-3113-4d49-b4ef-2baebfe99b53",
+            "created": "2024-05-12T10:52:38.368891Z",
+            "modified": "2024-05-12T10:52:38.368891Z",
+            "relationship_type": "derived-from",
+            "source_ref": "malware--efc3986c-6111-4a6c-a35c-ce1559d8787c",
+            "target_ref": "tool--fc7986eb-1350-4162-bee1-9c175177dbc5"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--b857f085-5418-49c7-b894-fa413c8da5f7",
+            "created": "2024-05-12T10:52:38.369891Z",
+            "modified": "2024-05-12T10:52:38.369891Z",
+            "relationship_type": "uses",
+            "source_ref": "attack-pattern--ac4684a8-44ee-45d2-81b1-ecbab42c654a",
+            "target_ref": "malware--efc3986c-6111-4a6c-a35c-ce1559d8787c"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--6fbf4846-2fa0-4c64-a843-b02070942e28",
+            "created": "2024-05-12T10:52:38.369891Z",
+            "modified": "2024-05-12T10:52:38.369891Z",
+            "relationship_type": "drops",
+            "source_ref": "malware--efc3986c-6111-4a6c-a35c-ce1559d8787c",
+            "target_ref": "malware--c3a11c8c-50c4-47a6-8da4-f9877b50df13"
+        },
+        {
+            "type": "vulnerability",
+            "spec_version": "2.1",
+            "id": "vulnerability--f6718dbe-6c67-4f6b-a82f-9ff41313d36c",
+            "created": "2024-05-12T10:52:38.369891Z",
+            "modified": "2024-05-12T10:52:38.369891Z",
+            "name": "Zabbix vulnerability",
+            "description": "In several cases SVR attempted to hide their backdoors via: [...] Abusing a DLL hijacking vulnerability in Zabbix software by replacing a legitimate Zabbix DLL with their one containing GraphicalProton backdoor"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--6fdfe296-9d04-41ff-a606-dbe27977c843",
+            "created": "2024-05-12T10:52:38.369891Z",
+            "modified": "2024-05-12T10:52:38.369891Z",
+            "relationship_type": "exploits",
+            "source_ref": "attack-pattern--ac4684a8-44ee-45d2-81b1-ecbab42c654a",
+            "target_ref": "vulnerability--f6718dbe-6c67-4f6b-a82f-9ff41313d36c"
+        },
+        {
+            "type": "vulnerability",
+            "spec_version": "2.1",
+            "id": "vulnerability--cee52d86-5f74-4766-bc31-0e1530785d74",
+            "created": "2024-05-12T10:52:38.369891Z",
+            "modified": "2024-05-12T10:52:38.369891Z",
+            "name": "Webroot vulnerability",
+            "description": "In several cases SVR attempted to hide their backdoors via: [...] Abusing a DLL hijacking vulnerability in Webroot antivirus software by replacing a legitimate Webroot DLL with their one containing GraphicalProton backdoor"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--de23b374-0420-47b6-8a82-18b1e94f860a",
+            "created": "2024-05-12T10:52:38.369891Z",
+            "modified": "2024-05-12T10:52:38.369891Z",
+            "relationship_type": "exploits",
+            "source_ref": "attack-pattern--ac4684a8-44ee-45d2-81b1-ecbab42c654a",
+            "target_ref": "vulnerability--cee52d86-5f74-4766-bc31-0e1530785d74"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--130d07eb-f90c-446f-9457-b15acd8539e9",
+            "created": "2024-05-12T10:52:38.369891Z",
+            "modified": "2024-05-12T10:52:38.369891Z",
+            "name": "Network Indicators of Compromise",
+            "description": "The authoring agencies have observed the SVR using the following network indicators of compromise (IOCs):",
+            "pattern": "[ipv4-addr:value = '65.20.97.203' OR ipv4-addr:value = '65.21.51.58' OR ipv4-addr:value = '103.76.128.34']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2024-05-12T10:52:38.369891Z"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--be5cb36a-1fdf-402d-9c10-03753cf5e534",
+            "created": "2024-05-12T10:52:38.373891Z",
+            "modified": "2024-05-12T10:52:38.373891Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--130d07eb-f90c-446f-9457-b15acd8539e9",
+            "target_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--dc5f80de-db77-4452-ae7f-a9823f7e2263",
+            "created": "2024-05-12T10:52:38.373891Z",
+            "modified": "2024-05-12T10:52:38.373891Z",
+            "relationship_type": "related-to",
+            "source_ref": "infrastructure--81f90e44-5c21-41f6-8c6b-788648a6cd1b",
+            "target_ref": "indicator--130d07eb-f90c-446f-9457-b15acd8539e9"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--fae951a9-1e44-4386-b0fb-d2a6176d70bb",
+            "created": "2024-05-12T10:52:38.373891Z",
+            "modified": "2024-05-12T10:52:38.373891Z",
+            "name": "rr.exe hash",
+            "description": "The authoring agencies have observed the SVR using the following hash indicators of compromise (IOCs):",
+            "pattern": "[file:hashes.'SHA-256' = 'CB83E5CB264161C28DE76A44D0EDB450745E773D24BEC5869D85F69633E44DCF']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2024-05-12T10:52:38.373891Z"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--c4f63905-5bbc-4f36-a8ab-05f3dfdcefa4",
+            "created": "2024-05-12T10:52:38.374891Z",
+            "modified": "2024-05-12T10:52:38.374891Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--fae951a9-1e44-4386-b0fb-d2a6176d70bb",
+            "target_ref": "malware--8474ef5b-34c7-4f46-a6a7-a851780146ad"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--ae839413-e1d3-4700-8831-679e85b69fd1",
+            "created": "2024-05-12T10:52:38.374891Z",
+            "modified": "2024-05-12T10:52:38.374891Z",
+            "name": "GraphicalProton hashes",
+            "description": "The authoring agencies have observed the SVR using the following hash indicators of compromise (IOCs):",
+            "pattern": "[file:hashes.'SHA-256' = '01B5F7094DE0B2C6F8E28AA9A2DED678C166D615530E595621E692A9C0240732' OR file:hashes.'SHA-256' = '34C8F155601A3948DDB0D60B582CFE87DE970D443CC0E05DF48B1A1AD2E42B5E' OR file:hashes.'SHA-256' = '620D2BF14FE345EEF618FDD1DAC242B3A0BB65CCB75699FE00F7C671F2C1D869' OR file:hashes.'SHA-256' = '773F0102720AF2957859D6930CD09693824D87DB705B3303CEF9EE794375CE13' OR file:hashes.'SHA-256' = '7B666B978DBBE7C032CEF19A90993E8E4922B743EE839632BFA6D99314EA6C53' OR file:hashes.'SHA-256' = '8AFB71B7CE511B0BCE642F46D6FC5DD79FAD86A58223061B684313966EFEF9C7' OR file:hashes.'SHA-256' = '971F0CED6C42DD2B6E3EA3E6C54D0081CF9B06E79A38C2EDE3A2C5228C27A6DC' OR file:hashes.'SHA-256' = 'CB83E5CB264161C28DE76A44D0EDB450745E773D24BEC5869D85F69633E44DCF' OR file:hashes.'SHA-256' = 'CD3584D61C2724F927553770924149BB51811742A461146B15B34A26C92CAD43' OR file:hashes.'SHA-256' = 'EBE231C90FAD02590FC56D5840ACC63B90312B0E2FEE7DA3C7606027ED92600E' OR file:hashes.'SHA-256' = 'F1B40E6E5A7CBC22F7A0BD34607B13E7E3493B8AAD7431C47F1366F0256E23EB' OR file:hashes.'SHA-256' = 'C7B01242D2E15C3DA0F45B8ADEC4E6913E534849CDE16A2A6C480045E03FBEE4' OR file:hashes.'SHA-256' = '4BF1915785D7C6E0987EB9C15857F7AC67DC365177A1707B14822131D43A6166']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2024-05-12T10:52:38.374891Z"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--0a577efe-1f31-4009-9f94-85c1da2ac5a3",
+            "created": "2024-05-12T10:52:38.377891Z",
+            "modified": "2024-05-12T10:52:38.377891Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--ae839413-e1d3-4700-8831-679e85b69fd1",
+            "target_ref": "malware--c3a11c8c-50c4-47a6-8da4-f9877b50df13"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--186837f7-90ad-4a66-9b4c-09e71a3b3e75",
+            "created": "2024-05-12T10:52:38.377891Z",
+            "modified": "2024-05-12T10:52:38.377891Z",
+            "name": "GraphicalProton HTTPS variant hashes",
+            "description": "The authoring agencies have observed the SVR using the following hash indicators of compromise (IOCs):",
+            "pattern": "[file:hashes.'SHA-256' = '18101518EAE3EEC6EBE453DE4C4C380160774D7C3ED5C79E1813013AC1BB0B93' OR file:hashes.'SHA-256' = '19F1EF66E449CF2A2B0283DBB756850CCA396114286E1485E35E6C672C9C3641' OR file:hashes.'SHA-256' = '1E74CF0223D57FD846E171F4A58790280D4593DF1F23132044076560A5455FF8' OR file:hashes.'SHA-256' = '219FB90D2E88A2197A9E08B0E7811E2E0BD23D59233287587CCC4642C2CF3D67' OR file:hashes.'SHA-256' = '92C7693E82A90D08249EDEAFBCA6533FED81B62E9E056DEC34C24756E0A130A6' OR file:hashes.'SHA-256' = 'B53E27C79EED8531B1E05827ACE2362603FB9F77F53CEE2E34940D570217CBF7' OR file:hashes.'SHA-256' = 'C37C109171F32456BBE57B8676CC533091E387E6BA733FBAA01175C43CFB6EBD' OR file:hashes.'SHA-256' = 'C40A8006A7B1F10B1B42FDD8D6D0F434BE503FB3400FB948AC9AB8DDFA5B78A0' OR file:hashes.'SHA-256' = 'C832462C15C8041191F190F7A88D25089D57F78E97161C3003D68D0CC2C4BAA3' OR file:hashes.'SHA-256' = 'F6194121E1540C3553273709127DFA1DAAB96B0ACFAB6E92548BFB4059913C69']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2024-05-12T10:52:38.377891Z"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--9dd76325-5272-4a29-866a-a45cace999d6",
+            "created": "2024-05-12T10:52:38.379891Z",
+            "modified": "2024-05-12T10:52:38.379891Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--186837f7-90ad-4a66-9b4c-09e71a3b3e75",
+            "target_ref": "malware--72a77b4e-7490-46c7-8181-4239b5584dee"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--f1ad2319-987f-499d-af61-dae4ff06a5dd",
+            "created": "2024-05-12T10:52:38.379891Z",
+            "modified": "2024-05-12T10:52:38.379891Z",
+            "name": "GraphicalProton HTTPS variant URL",
+            "pattern": "[url:value = 'hxxps://matclick.com/wp-query.php']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2024-05-12T10:52:38.379891Z"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--257a0add-c45d-4e93-b021-58c7689b2b3d",
+            "created": "2024-05-12T10:52:38.380891Z",
+            "modified": "2024-05-12T10:52:38.380891Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--f1ad2319-987f-499d-af61-dae4ff06a5dd",
+            "target_ref": "malware--72a77b4e-7490-46c7-8181-4239b5584dee"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--cfaa5e9f-5e1d-4915-adf5-70290d567f70",
+            "created": "2024-05-12T10:52:38.380891Z",
+            "modified": "2024-05-12T10:52:38.380891Z",
+            "name": "Modded VCPerf hash",
+            "description": "The authoring agencies have observed the following hash indicators of compromise (IOCs):",
+            "pattern": "[file:hashes.'SHA-256' = 'D724728344FCF3812A0664A80270F7B4980B82342449A8C5A2FA510E10600443']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2024-05-12T10:52:38.380891Z"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--61572fca-2026-43cc-a776-4a5d16a6effd",
+            "created": "2024-05-12T10:52:38.380891Z",
+            "modified": "2024-05-12T10:52:38.380891Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--cfaa5e9f-5e1d-4915-adf5-70290d567f70",
+            "target_ref": "malware--efc3986c-6111-4a6c-a35c-ce1559d8787c"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--75c57aea-27bc-4ae1-9b5a-f5ee4b068b25",
+            "created": "2024-05-12T10:52:38.380891Z",
+            "modified": "2024-05-12T10:52:38.380891Z",
+            "name": "Backdoored Zabbix hash",
+            "pattern": "[file:hashes.'SHA-256' = '4EE70128C70D646C5C2A9A17AD05949CB1FBF1043E9D671998812B2DCE75CF0F']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2024-05-12T10:52:38.380891Z"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--d45c2556-b5f3-4bcb-bd4e-2cb6d97046ff",
+            "created": "2024-05-12T10:52:38.381891Z",
+            "modified": "2024-05-12T10:52:38.381891Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--75c57aea-27bc-4ae1-9b5a-f5ee4b068b25",
+            "target_ref": "attack-pattern--ac4684a8-44ee-45d2-81b1-ecbab42c654a"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--040ad644-a928-475b-9949-a2a05993ff97",
+            "created": "2024-05-12T10:52:38.381891Z",
+            "modified": "2024-05-12T10:52:38.381891Z",
+            "name": "Backdoored Webroot hash",
+            "pattern": "[file:hashes.'SHA-256' = '950ADBAF66AB214DE837E6F1C00921C501746616A882EA8C42F1BAD5F9B6EFF4']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2024-05-12T10:52:38.381891Z"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--358f5491-2e72-48ee-b017-d1f52433fc29",
+            "created": "2024-05-12T10:52:38.382891Z",
+            "modified": "2024-05-12T10:52:38.382891Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--040ad644-a928-475b-9949-a2a05993ff97",
+            "target_ref": "attack-pattern--ac4684a8-44ee-45d2-81b1-ecbab42c654a"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--fe4acb53-71dd-473a-b807-0f5eb46c17dc",
+            "created": "2024-05-12T10:52:38.382891Z",
+            "modified": "2024-05-12T10:52:38.382891Z",
+            "name": "Log message indicator",
+            "description": "On a Windows system, the log file C:\\TeamCity\\logs\\teamcity-server.log will contain a log message when an attacker modified the internal.properties file. There will also be a log message for every process created via the /app/rest/debug/processes endpoint.",
+            "pattern": "[file:name = 'internal.properties' AND file:parent_directory_ref.path = 'C:\\\\ProgramData\\\\JetBrains\\\\TeamCity\\\\config' AND file:x_custom_property = 'File edited by user with id=1']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2024-05-12T10:52:38.382891Z"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--4205f557-d403-429b-a679-1c46ea5cd4c4",
+            "created": "2024-05-12T10:52:38.383891Z",
+            "modified": "2024-05-12T10:52:38.383891Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--fe4acb53-71dd-473a-b807-0f5eb46c17dc",
+            "target_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--fc060fe6-6e4c-4723-889f-243a5bc296f0",
+            "created": "2024-05-12T10:52:38.383891Z",
+            "modified": "2024-05-12T10:52:38.383891Z",
+            "name": "Sigma rule 1",
+            "description": "Detects whoami.exe execution and listing of privileges.",
+            "pattern": "Image|endswith: 'whoami.exe' AND CommandLine|contains: ['priv', 'PRIV']",
+            "pattern_type": "sigma",
+            "valid_from": "2024-05-12T10:52:38.383891Z"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--4da491f2-3731-4b3c-bab2-a6ba5a8c5865",
+            "created": "2024-05-12T10:52:38.383891Z",
+            "modified": "2024-05-12T10:52:38.383891Z",
+            "name": "Sigma rule 2",
+            "description": "Detects nltest.exe execution and DC listing.",
+            "pattern": "Image|endswith: 'nltest.exe' AND CommandLine|re: '.*dclist\\:.*|.*DCLIST\\:.*|.*dsgetdc\\:.*|.*DSGETDC\\:.*'",
+            "pattern_type": "sigma",
+            "valid_from": "2024-05-12T10:52:38.383891Z"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--37fb718e-5611-474c-9a0a-4c6adc3d8635",
+            "created": "2024-05-12T10:52:38.383891Z",
+            "modified": "2024-05-12T10:52:38.383891Z",
+            "name": "Sigma rule 3",
+            "description": "Detects DLL execution via WMI.",
+            "pattern": "Image|endswith: 'WMIC.exe' AND CommandLine|contains|all: ['call', 'rundll32']",
+            "pattern_type": "sigma",
+            "valid_from": "2024-05-12T10:52:38.383891Z"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--5500ad4d-b9bb-4d6a-a2f9-fd28b78b2b92",
+            "created": "2024-05-12T10:52:38.384891Z",
+            "modified": "2024-05-12T10:52:38.384891Z",
+            "name": "Sigma rule 4",
+            "description": "Detects processes with 'connect' and 'pass' as arguments indicating potentially malicious activity.",
+            "pattern": "CommandLine|contains|all: ['pass', 'connect']",
+            "pattern_type": "sigma",
+            "valid_from": "2024-05-12T10:52:38.384891Z"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--98568b6d-1018-4d92-a6b7-e5a273575fa3",
+            "created": "2024-05-12T10:52:38.384891Z",
+            "modified": "2024-05-12T10:52:38.384891Z",
+            "name": "Sigma rule 10",
+            "description": "Detects PowerShell scripts enumerating services or drives, potential information gathering activity.",
+            "pattern": "ScriptBlockText|contains|all: ['Get-WmiObject', '-Class', 'Win32_Service'] OR ScriptBlockText|contains|all: ['Get-WindowsDriver', '-Online', '-All']",
+            "pattern_type": "sigma",
+            "valid_from": "2024-05-12T10:52:38.384891Z"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--beabf71a-6fde-4bf9-bfa0-ae25a6286a3a",
+            "created": "2024-05-12T10:52:38.384891Z",
+            "modified": "2024-05-12T10:52:38.384891Z",
+            "name": "Sigma rule 5",
+            "description": "Detects compression of files from temporary directories, possibly in preparation for data exfiltration.",
+            "pattern": "ScriptBlockText|re: '.*Compress\\-Archive.*Path.*Windows\\\\[Tt]{1}emp\\\\[1-9]{1}.*DestinationPath.*Windows\\\\[Tt]{1}emp\\\\.*'",
+            "pattern_type": "sigma",
+            "valid_from": "2024-05-12T10:52:38.384891Z"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--4603663a-be1c-42a7-b73e-27b3c2a3ca7a",
+            "created": "2024-05-12T10:52:38.384891Z",
+            "modified": "2024-05-12T10:52:38.384891Z",
+            "name": "Sigma rule 6",
+            "description": "Detects loading of DLLs with specific names known to be associated with the GraphicalProton backdoor.",
+            "pattern": "ImageLoaded|endswith: ['AclNumsInvertHost.dll', 'ModeBitmapNumericAnimate.dll', 'UnregisterAncestorAppendAuto.dll', 'DeregisterSeekUsers.dll', 'ScrollbarHandleGet.dll', 'PerformanceCaptionApi.dll', 'WowIcmpRemoveReg.dll', 'BlendMonitorStringBuild.dll', 'HandleFrequencyAll.dll', 'HardSwapColor.dll', 'LengthInMemoryActivate.dll', 'ParametersNamesPopup.dll', 'ModeFolderSignMove.dll', 'ChildPaletteConnected.dll', 'AddressResourcesSpec.dll']",
+            "pattern_type": "sigma",
+            "valid_from": "2024-05-12T10:52:38.384891Z"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--71fe382a-20dc-4999-81f8-d95b179efc0a",
+            "created": "2024-05-12T10:52:38.384891Z",
+            "modified": "2024-05-12T10:52:38.384891Z",
+            "name": "Sigma rule 7",
+            "description": "Detects the use of 'reg.exe' to save sensitive registry entries, possibly for exfiltration or backup before making malicious modifications.",
+            "pattern": "Image|endswith: 'reg.exe' AND CommandLine|contains: 'save' AND CommandLine|re: '.*HKLM\\\\SYSTEM.*|.*HKLM\\\\SECURITY.*|.*HKLM\\\\SAM.*'",
+            "pattern_type": "sigma",
+            "valid_from": "2024-05-12T10:52:38.384891Z"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--65847b63-0d0f-4dfd-9025-b5610e13c698",
+            "created": "2024-05-12T10:52:38.384891Z",
+            "modified": "2024-05-12T10:52:38.384891Z",
+            "name": "Sigma rule 8",
+            "description": "Detects creation or manipulation of scheduled tasks with names associated with the GraphicalProton backdoor.",
+            "pattern": "EventID: ['4698', '4699', '4702'] AND TaskName|contains: ['\\\\Microsoft\\\\Windows\\\\IISUpdateService', '\\\\Microsoft\\\\Windows\\\\WindowsDefenderService', '\\\\Microsoft\\\\Windows\\\\WindowsDefenderService2', '\\\\Microsoft\\\\DefenderService', '\\\\Microsoft\\\\Windows\\\\DefenderUPDService', '\\\\Microsoft\\\\Windows\\\\WiMSDFS', '\\\\Microsoft\\\\Windows\\\\Application Experience\\\\StartupAppTaskCkeck', '\\\\Microsoft\\\\Windows\\\\Windows Error Reporting\\\\SubmitReporting', '\\\\Microsoft\\\\Windows\\\\Windows Defender\\\\Defender Update Service', '\\\\WindowUpdate', '\\\\Microsoft\\\\Windows\\\\Windows Error Reporting\\\\CheckReporting', '\\\\Microsoft\\\\Windows\\\\Application Experience\\\\StartupAppTaskCheck', '\\\\Microsoft\\\\Windows\\\\Speech\\\\SpeechModelInstallTask', '\\\\Microsoft\\\\Windows\\\\Windows Filtering Platform\\\\BfeOnServiceStart', '\\\\Microsoft\\\\Windows\\\\Data Integrity Scan\\\\Data Integrity Update', '\\\\Microsoft\\\\Windows\\\\WindowsUpdate\\\\Scheduled AutoCheck', '\\\\Microsoft\\\\Windows\\\\ATPUpd', '\\\\Microsoft\\\\Windows\\\\Windows Defender\\\\Service Update', '\\\\Microsoft\\\\Windows\\\\WindowsUpdate\\\\Scheduled Check', '\\\\Microsoft\\\\Windows\\\\WindowsUpdate\\\\Scheduled AutoCheck', '\\\\Defender', '\\\\defender']",
+            "pattern_type": "sigma",
+            "valid_from": "2024-05-12T10:52:38.384891Z"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--dc14fc5e-3e85-4692-af0f-a142acfab2d1",
+            "created": "2024-05-12T10:52:38.384891Z",
+            "modified": "2024-05-12T10:52:38.384891Z",
+            "name": "Sigma rule 9",
+            "description": "Detects modifications to specific sensitive registry keys, indicating potential security policy bypass attempts.",
+            "pattern": "[registry:key = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\DisableRestrictedAdmin' OR registry:key = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\NoLMHash']",
+            "pattern_type": "sigma",
+            "valid_from": "2024-05-12T10:52:38.384891Z"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--bf38e7ab-006c-43a8-b0ed-8aaee0079cf5",
+            "created": "2024-05-12T10:52:38.384891Z",
+            "modified": "2024-05-12T10:52:38.384891Z",
+            "name": "Sigma rule 11",
+            "description": "Detects the loading of drivers by their names or hashes known to be malicious or used in unauthorized modifications.",
+            "pattern": "ImageLoaded|endswith: ['RTCore64.sys', 'DBUtils_2_3.sys'] OR Hashes|contains: ['01aa278b07b58dc46c84bd0b1b5c8e9ee4e62ea0bf7a695862444af32e87f1fd', '0296e2ce999e67c76352613a718e11516fe1b0efc3ffdb8918fc999dd76a73a5']",
+            "pattern_type": "sigma",
+            "valid_from": "2024-05-12T10:52:38.384891Z"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--01946e9a-91ef-4aff-a975-1328871c8894",
+            "created": "2024-05-12T10:52:38.384891Z",
+            "modified": "2024-05-12T10:52:38.384891Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--fc060fe6-6e4c-4723-889f-243a5bc296f0",
+            "target_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--df36b80a-cd02-43ca-b751-7ba9219f9f65",
+            "created": "2024-05-12T10:52:38.384891Z",
+            "modified": "2024-05-12T10:52:38.384891Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--4da491f2-3731-4b3c-bab2-a6ba5a8c5865",
+            "target_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--13643ce8-aaa3-4f0d-aea1-95f60a56c632",
+            "created": "2024-05-12T10:52:38.384891Z",
+            "modified": "2024-05-12T10:52:38.384891Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--37fb718e-5611-474c-9a0a-4c6adc3d8635",
+            "target_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--0533a302-d936-48b0-8e46-c389a09e84d1",
+            "created": "2024-05-12T10:52:38.384891Z",
+            "modified": "2024-05-12T10:52:38.384891Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--5500ad4d-b9bb-4d6a-a2f9-fd28b78b2b92",
+            "target_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--8b311990-0dcd-4894-a6b2-37fa942487eb",
+            "created": "2024-05-12T10:52:38.384891Z",
+            "modified": "2024-05-12T10:52:38.384891Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--beabf71a-6fde-4bf9-bfa0-ae25a6286a3a",
+            "target_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--4c4d0e50-e0ff-42c2-9a7a-aeaaed2f2ebb",
+            "created": "2024-05-12T10:52:38.384891Z",
+            "modified": "2024-05-12T10:52:38.384891Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--4603663a-be1c-42a7-b73e-27b3c2a3ca7a",
+            "target_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--2eddb461-321c-4542-88c8-b75cb05a041e",
+            "created": "2024-05-12T10:52:38.384891Z",
+            "modified": "2024-05-12T10:52:38.384891Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--71fe382a-20dc-4999-81f8-d95b179efc0a",
+            "target_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--fa1d7f74-774a-4987-ad0f-8ea3f6d6f702",
+            "created": "2024-05-12T10:52:38.385891Z",
+            "modified": "2024-05-12T10:52:38.385891Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--65847b63-0d0f-4dfd-9025-b5610e13c698",
+            "target_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--5ceb7b55-8cb2-4c03-940a-ae4f8d8ca35a",
+            "created": "2024-05-12T10:52:38.385891Z",
+            "modified": "2024-05-12T10:52:38.385891Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--dc14fc5e-3e85-4692-af0f-a142acfab2d1",
+            "target_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--ad6dabde-2f04-4261-ba8d-341ad139ef20",
+            "created": "2024-05-12T10:52:38.385891Z",
+            "modified": "2024-05-12T10:52:38.385891Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--98568b6d-1018-4d92-a6b7-e5a273575fa3",
+            "target_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--3e72fe17-fcd4-4f4b-b788-c39aa4f86c2e",
+            "created": "2024-05-12T10:52:38.385891Z",
+            "modified": "2024-05-12T10:52:38.385891Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--bf38e7ab-006c-43a8-b0ed-8aaee0079cf5",
+            "target_ref": "campaign--fe90e6a2-aeea-4cea-be0c-ecf0c10dac23"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--ba85488c-b320-4673-b440-48926a7090c6",
+            "created": "2024-05-12T10:52:38.385891Z",
+            "modified": "2024-05-12T10:52:38.385891Z",
+            "name": "YARA rule",
+            "description": "The following rule detects most known GraphicalProton variants: [...]",
+            "pattern": "rule APT29_GraphicalProton { strings: $op_string_crypt = { c1 e? (1b | 18 | 10 | 13 | 19 | 10) 48 [4] 8b [2] c1 e? (05 | 08 | 10 | 0d | 07) 09 ?? 48 } $op_decrypt_config = { 48 05 20 00 00 00 48 89 C1 48 [6] 41 B8 ?? ?? 00 00 E8 [4] 48 [4] 48 05 40 00 00 00 48 89 C1 48 [6] 41 B8 ?? ?? 00 00 E8 [4] 48 [4] 48 05 60 00 00 00 48 89 C1 48 [6] 41 B8 ?? ?? 00 00 E8 [4] 48 [4] 48 05 80 00 00 00 48 89 C1 48 [6] 41 B8 ?? ?? 00 00 E8 [4] 48 [4] 48 05 A0 00 00 00 } condition: all of them }",
+            "pattern_type": "yara",
+            "valid_from": "2024-05-12T10:52:38.385891Z"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--aa92067f-e938-475a-a84d-3cec6f400e02",
+            "created": "2024-05-12T10:52:38.385891Z",
+            "modified": "2024-05-12T10:52:38.385891Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--ba85488c-b320-4673-b440-48926a7090c6",
+            "target_ref": "malware--c3a11c8c-50c4-47a6-8da4-f9877b50df13"
+        }
+    ]
+}

@@ -1,0 +1,2 @@
+- the victims could be "Infrastructure" instead of "Identity", but being all individuals and all specific targets, I preferred to label them as such.
+- the italian hacking forum could be an infrastructure.

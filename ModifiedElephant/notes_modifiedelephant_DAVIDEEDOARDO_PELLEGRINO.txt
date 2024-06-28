@@ -1,0 +1,5 @@
+- I'm not sure on how the whole Bhima Koregaon case should be treated. It is mentioned pretty lightly and with little relevance to the actual threat actor, but still enough to be included in the STIX specification in my opinion. I decided to label it as an identity since it was the least ambiguous entity.
+- Similar case on the Android trojan. Could be treated as a specification of a commodity trojan family, or as a singleton. I decided on the former just for clarity sake, also because it's specified that the android trojan was "designed for broader cybercrime".
+- I'm confused on how to represent the iTunes backup as an indicator, specifically on what pattern to specify. Research on the topic led to even more confusion, especially on the documentation. The one in the json is my best attempt.
+- most of the entities attributed to the spearphishing attack patterns as consequences could be attributed to the user execution
+    attack pattern, and vice versa.
